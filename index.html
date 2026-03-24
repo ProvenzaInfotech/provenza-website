@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Provenza Infotech | AI-Focused Career Training Institute</title>
+  <meta name="description" content="Provenza Infotech offers AI-focused career training in Python Full Stack, .NET Core Full Stack, Java Full Stack, and Digital Marketing with real-world projects, hands-on learning, and one-to-one mentorship." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    :root {
+      --primary: #1f5fbf;
+      --primary-dark: #0b2455;
+      --primary-deep: #071737;
+      --secondary: #ff9f1c;
+      --secondary-dark: #ea7d00;
+      --text: #10203a;
+      --muted: #66748d;
+      --light: #f3f7ff;
+      --white: #ffffff;
+      --border: rgba(255,255,255,0.1);
+      --shadow: 0 20px 60px rgba(8, 26, 67, 0.16);
+      --radius: 26px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(31,95,191,0.10), transparent 24%),
+        radial-gradient(circle at top right, rgba(255,159,28,0.10), transparent 24%),
+        linear-gradient(180deg, #f9fbff 0%, #eef4ff 100%);
+      overflow-x: hidden;
+    }
+
+    h1,h2,h3,h4,h5,h6,.navbar-brand { font-family: 'Outfit', sans-serif; }
+    section { padding: 70px 0; position: relative; }
+
+    .section-title { max-width: 720px; margin-bottom: 20px; }
+    .section-title .tag {
+      display: inline-block; padding: 8px 16px; border-radius: 50px;
+      background: rgba(31,95,191,0.08); color: var(--primary);
+      font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+      font-size: .8rem; margin-bottom: 14px;
+    }
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3.1rem); font-weight: 800; line-height: 1.08; margin-bottom: 14px;
+    }
+    .section-title p { color: var(--muted); font-size: 1.03rem; line-height: 1.85; }
+
+    .navbar {
+  height: 84px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #071737, #0d2f6b 60%, #12397f 100%);
+  box-shadow: 0 10px 30px rgba(7, 23, 55, 0.35);
+}
+
+.navbar.scrolled {
+  height: 76px;
+  padding: 0;
+  background: linear-gradient(135deg, #071737, #0d2f6b 60%, #12397f 100%);
+}
+
+.navbar .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.main-logo {
+  display: block;
+  height: 52px;
+  width: 260px;
+  object-fit: cover;
+  object-position: left center;
+  border-radius: 0;
+  background: transparent;
+  mix-blend-mode: screen;
+}
+
+.navbar.scrolled .main-logo {
+  height: 48px;
+  width: 240px;
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.88) !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ffffff !important;
+}
+
+.btn-theme {
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  color: #fff;
+}
+    .btn-theme:hover { transform: translateY(-2px); color: #fff; }
+    .btn-outline-theme {
+      border: 2px solid rgba(16,32,58,.12); color: var(--text); border-radius: 14px;
+      padding: 12px 24px; font-weight: 700; background: rgba(255,255,255,.75); transition: .3s ease;
+    }
+    .btn-outline-theme:hover { border-color: var(--secondary); color: var(--secondary-dark); transform: translateY(-2px); }
+
+    .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 140px; overflow: hidden; }
+    .hero::before, .hero::after { content: ''; position: absolute; border-radius: 50%; filter: blur(22px); z-index: 0; }
+    .hero::before {
+      width: 360px; height: 360px; background: rgba(31,95,191,.18); top: 90px; right: -80px; animation: floatY 6s ease-in-out infinite;
+    }
+    .hero::after {
+      width: 260px; height: 260px; background: rgba(255,159,28,.18); bottom: 80px; left: -80px; animation: floatY 8s ease-in-out infinite reverse;
+    }
+    .hero-content,.hero-visual { position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 50px;
+      background: rgba(255,255,255,.82); border: 1px solid rgba(31,95,191,.12);
+      box-shadow: 0 10px 30px rgba(12,37,80,.06); font-weight: 700; color: var(--primary-dark); margin-bottom: 22px;
+    }
+    .hero h1 { font-size: clamp(2.6rem, 5vw, 4.9rem); font-weight: 800; line-height: 1.02; letter-spacing: -.03em; margin-bottom: 20px; }
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero p { max-width: 680px; color: var(--muted); font-size: 1.08rem; line-height: 1.95; margin-bottom: 28px; }
+    .hero-points { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 30px; }
+    .hero-points span {
+      display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 50px;
+      background: rgba(255,255,255,.85); border: 1px solid rgba(16,32,58,.08); font-weight: 600; font-size: .95rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(8,24,61,.98), rgba(9,34,84,.97));
+      border-radius: 30px; padding: 30px; color: white; box-shadow: 0 30px 60px rgba(9,31,78,.25);
+      position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,.07);
+      animation: floatY 6s ease-in-out infinite;
+    }
+    .hero-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at top right, rgba(255,159,28,.22), transparent 35%);
+      pointer-events: none;
+    }
+    .brand-mini { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    .brand-mini img {
+      width: 62px; height: 62px; object-fit: cover; border-radius: 18px; background: rgba(255,255,255,.08); padding: 4px;
+    }
+    .brand-mini h5 { margin: 0; font-weight: 800; letter-spacing: .03em; }
+    .brand-mini small { color: rgba(255,255,255,.75); }
+    .tech-pill {
+      display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 50px; padding: 10px 14px; margin: 6px 6px 0 0; font-size: .9rem; color: rgba(255,255,255,.92);
+    }
+    .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 24px; }
+    .stat-box {
+      padding: 18px; border-radius: 20px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.08); backdrop-filter: blur(10px);
+    }
+    .stat-box h3 { font-size: 1.9rem; color: #fff; font-weight: 800; margin-bottom: 8px; }
+    .stat-box p { margin: 0; font-size: .95rem; color: rgba(255,255,255,.78); line-height: 1.6; }
+
+    .course-card, .feature-card, .about-card, .contact-card, .form-card, .detail-panel {
+      padding: 32px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(243,247,255,.98));
+      border: 1px solid rgba(14,37,82,.08);
+      box-shadow: 0 20px 50px rgba(7,32,73,.12);
+      position: relative;
+      transition: .4s ease;
+      overflow: hidden;
+    }
+
+    .course-row {
+      display: grid !important;
+      grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+      gap: 24px !important;
+      align-items: stretch !important;
+      margin-top: 2rem;
+    }
+    .course-item {
+      min-width: 0;
+    }
+    @media (max-width: 1199px) {
+      .course-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+    }
+    @media (max-width: 767px) {
+      .course-row {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    .course-card {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: 100%;
+      min-height: 390px;
+      height: 100%;
+      background: linear-gradient(180deg, #f8fbff 0%, #eef4ff 100%);
+      border-radius: 28px;
+      padding: 24px 22px 22px;
+      text-decoration: none;
+      overflow: hidden;
+      border: 1px solid rgba(31,95,191,.09);
+      box-shadow: 0 18px 40px rgba(8, 32, 74, 0.10);
+      transition: transform .38s ease, box-shadow .38s ease, border-color .38s ease, background .38s ease;
+      cursor: pointer;
+      isolation: isolate;
+      transform-style: preserve-3d;
+    }
+    .course-card::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: -22px;
+      right: -22px;
+      width: 68px;
+      height: 68px;
+      border-radius: 999px;
+      transform: scale(1);
+      transform-origin: 50% 50%;
+      transition: transform .45s ease-out;
+      background: linear-gradient(135deg, #0d2f6b, #1f5fbf);
+    }
+    .course-card::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      background: radial-gradient(circle at top right, rgba(255,255,255,.22), transparent 25%), radial-gradient(circle at bottom left, rgba(255,159,28,.10), transparent 22%);
+      opacity: .7;
+      z-index: -1;
+      pointer-events: none;
+    }
+    .course-card:hover::before {
+      transform: scale(24);
+    }
+    .course-card:hover {
+      transform: perspective(1000px) rotateX(4deg) rotateY(-4deg) translateY(-12px);
+      box-shadow: 0 30px 70px rgba(8, 32, 74, 0.18), 0 0 35px rgba(31,95,191,.16);
+      border-color: rgba(31,95,191,.14);
+      background: linear-gradient(180deg, #f4f9ff 0%, #e9f2ff 100%);
+    }
+    .course-badge {
+      align-self: flex-start;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff9f1c, #ffb347);
+      color: #fff;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .02em;
+      box-shadow: 0 10px 24px rgba(255,159,28,.24);
+      margin-bottom: 16px;
+    }
+    .course-icon {
+      width: 74px;
+      height: 74px;
+      border-radius: 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      margin-bottom: 18px;
+      background: linear-gradient(135deg, rgba(31,95,191,.12), rgba(255,159,28,.14));
+      color: var(--primary-dark);
+      border: 1px solid rgba(31,95,191,.08);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.25);
+      transition: all .45s ease;
+      flex-shrink: 0;
+    }
+    .course-title {
+      color: #1a2640;
+      font-size: 1.38rem;
+      line-height: 1.35;
+      font-weight: 700;
+      margin-bottom: .7em;
+      transition: color .45s ease;
+      display: block;
+      min-height: 74px;
+    }
+    .course-desc {
+      font-size: .98rem;
+      font-weight: 400;
+      line-height: 1.75;
+      color: #53627b;
+      transition: color .45s ease;
+      display: block;
+      margin-bottom: 1rem;
+      min-height: 118px;
+    }
+    .course-mini-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+      margin-bottom: 18px;
+      min-height: 42px;
+    }
+    .course-mini-tags span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(31,95,191,.08);
+      border: 1px solid rgba(31,95,191,.10);
+      color: var(--primary-dark);
+      font-size: .78rem;
+      font-weight: 700;
+      transition: all .35s ease;
+    }
+    .course-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 18px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #1f5fbf, #0d2f6b);
+      color: #fff;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(31,95,191,.22);
+      transition: all .35s ease;
+      width: fit-content;
+      margin-top: auto;
+    }
+    .course-card:hover .course-link,
+    .course-link:hover {
+      background: linear-gradient(135deg, #ff9f1c, #ffb347);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(255,159,28,.30);
+      transform: translateY(-2px);
+    }
+    .go-corner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: 2.8em;
+      height: 2.8em;
+      overflow: hidden;
+      top: 0;
+      right: 0;
+      background: linear-gradient(135deg, #1f5fbf, #0d2f6b);
+      border-radius: 0 0 0 28px;
+      z-index: 2;
+      transition: all .35s ease;
+    }
+    .go-arrow {
+      margin-top: -2px;
+      margin-right: -2px;
+      color: white;
+      font-size: 1rem;
+      font-weight: 700;
+      transition: transform .35s ease;
+    }
+    .course-card:hover .go-arrow {
+      transform: translate(2px, -2px);
+    }
+    .course-card:hover .course-title,
+    .course-card:hover .course-desc {
+      color: #ffffff;
+    }
+    .course-card:hover .course-mini-tags span {
+      background: rgba(255,255,255,.12);
+      border-color: rgba(255,255,255,.16);
+      color: #ffffff;
+    }
+    .course-card:hover .course-icon {
+      background: rgba(255,255,255,.14);
+      color: #ffffff;
+      border-color: rgba(255,255,255,.18);
+      transform: translateY(-6px) rotate(-6deg) scale(1.07);
+      box-shadow: 0 16px 28px rgba(0,0,0,.10), inset 0 0 0 1px rgba(255,255,255,.15);
+    }
+    .course-card:hover .go-corner {
+      background: linear-gradient(135deg, #ff9f1c, #ea7d00);
+    }
+
+    .about-card, .feature-card, .contact-card, .form-card, .detail-panel {
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(14,37,82,.08);
+      transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+      position: relative;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .about-card::before, .feature-card::before, .contact-card::before, .detail-panel::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      transform: scale(0);
+      transform-origin: center;
+      transition: transform .45s ease-out;
+      background: linear-gradient(135deg, #1f5fbf, #0d2f6b);
+      pointer-events: none;
+      border-radius: inherit;
+    }
+    .about-card:hover::before, .feature-card:hover::before, .contact-card:hover::before, .detail-panel:hover::before {
+      transform: scale(1);
+    }
+    .about-card, .feature-card, .contact-card {
+      padding: 32px; height: 100%; transition: .45s ease;
+      border-radius: 30px;
+    }
+    .about-card:hover, .feature-card:hover, .contact-card:hover, .detail-panel:hover {
+      transform: translateY(-10px) scale(1.01);
+      box-shadow: 0 26px 60px rgba(7,32,73,.16);
+      border-color: rgba(31,95,191,.14);
+    }
+    .about-card:hover h4,
+    .about-card:hover p,
+    .about-card:hover li,
+    .feature-card:hover h4,
+    .feature-card:hover p,
+    .contact-card:hover h5,
+    .contact-card:hover p,
+    .detail-panel:hover h4,
+    .detail-panel:hover p,
+    .detail-panel:hover li {
+      color: #fff;
+    }
+    .about-card:hover .why-list i,
+    .feature-card:hover .feature-icon,
+    .contact-card:hover .contact-icon {
+      color: #fff;
+    }
+    .about-card:hover .feature-icon,
+    .feature-card:hover .feature-icon,
+    .contact-card:hover .contact-icon {
+      transform: scale(1.08) rotate(-6deg);
+      background: rgba(255,255,255,.14);
+      box-shadow: 0 14px 28px rgba(31,95,191,.18);
+    }
+
+    .feature-icon, .contact-icon {
+      width: 64px; height: 64px; border-radius: 18px; display: inline-flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 18px; background: linear-gradient(135deg, rgba(31,95,191,.15), rgba(255,159,28,.18)); color: var(--primary-dark);
+      transition: .4s ease;
+    }
+    .feature-card p, .about-card p, .contact-card p, .detail-panel p { color: var(--muted); line-height: 1.8; margin-bottom: 18px; }
+    .why-list { list-style: none; padding-left: 0; margin: 0; }
+    .why-list li { display: flex; gap: 12px; margin-bottom: 14px; color: var(--muted); line-height: 1.7; }
+    .why-list i { color: var(--secondary-dark); font-size: 1.1rem; margin-top: 3px; }
+
+    .highlight-strip {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 40px;
+    }
+    .highlight-box {
+      padding: 24px;
+      border-radius: 24px;
+      background: linear-gradient(160deg, rgba(255,255,255,.94), rgba(244,248,255,.98));
+      border: 1px solid rgba(14,37,82,.08);
+      box-shadow: var(--shadow);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+      z-index: 0;
+    }
+    .highlight-box::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: -18px;
+      right: -18px;
+      width: 56px;
+      height: 56px;
+      border-radius: 999px;
+      transform: scale(1);
+      transform-origin: 50% 50%;
+      transition: transform .45s ease-out;
+      background: linear-gradient(135deg, #1f5fbf, #ff9f1c);
+    }
+    .highlight-box > * { position: relative; z-index: 1; transition: .35s ease; }
+    .highlight-box:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 26px 60px rgba(7,32,73,.16);
+      border-color: rgba(31,95,191,.14);
+    }
+    .highlight-box:hover::before { transform: scale(22); }
+    .highlight-box h5 { font-weight: 800; margin: 12px 0 8px; }
+    .highlight-box p { color: var(--muted); margin: 0; line-height: 1.7; font-size: .95rem; }
+    .highlight-box i { font-size: 1.8rem; color: var(--secondary-dark); }
+    .highlight-box:hover h5,
+    .highlight-box:hover p,
+    .highlight-box:hover i { color: #fff; }
+
+    .contact-banner {
+      background: linear-gradient(135deg, rgba(13,42,102,.98), rgba(31,95,191,.95)); color: white; border-radius: 32px;
+      padding: 40px; box-shadow: 0 30px 70px rgba(13,42,102,.24); position: relative; overflow: hidden;
+    }
+    .contact-banner::after {
+      content: ''; position: absolute; width: 260px; height: 260px; background: rgba(255,159,28,.15); border-radius: 50%; right: -80px; top: -80px;
+    }
+    .contact-banner .btn-theme {
+      background: linear-gradient(135deg, var(--secondary), #ffbb55); color: #18233f; box-shadow: 0 12px 30px rgba(255,159,28,.25);
+    }
+    .form-card { padding: 36px; }
+    .form-control, .form-select {
+      min-height: 54px; border-radius: 14px; border: 1px solid rgba(16,32,58,.1); padding: 14px 16px; font-size: .98rem; box-shadow: none!important;
+    }
+    textarea.form-control { min-height: 130px; resize: none; }
+    .form-control:focus, .form-select:focus { border-color: rgba(31,95,191,.4); }
+    .form-note { color: var(--muted);   font-size: .94rem;
+        font-weight: 500; margin-top: 14px; }
+
+    .detail-page { display: none; padding-top: 140px; min-height: 100vh; }
+    .detail-page.active { display: block; animation: fadeUp .6s ease; }
+    .detail-hero {
+      background: linear-gradient(135deg, #071737, #0d2f6b 60%, #1f5fbf);
+      color: #fff; padding: 60px; border-radius: 36px;
+      box-shadow: 0 30px 80px rgba(7,24,61,.35);
+      position: relative; overflow: hidden;
+    }
+    .detail-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, transparent 35%, rgba(255,159,28,.12));
+    }
+    .detail-hero::after {
+      content: ''; position: absolute; width: 240px; height: 240px; border-radius: 50%; background: rgba(255,159,28,.14); right: -60px; top: -60px;
+    }
+    .detail-hero p { color: rgba(255,255,255,.84); max-width: 760px; margin-bottom: 0; line-height: 1.9; position: relative; z-index: 1; }
+    .detail-hero h2 { font-size: clamp(2rem,4vw,3.2rem); font-weight: 800; margin-bottom: 14px; position: relative; z-index: 1; }
+    .detail-top-meta {
+      display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0 0; position: relative; z-index: 1;
+    }
+    .detail-top-meta span {
+      padding: 10px 14px; border-radius: 50px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.10);
+      font-weight: 700; font-size: .92rem;
+    }
+    .detail-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 24px; margin-top: 28px; }
+    .detail-panel {
+      padding: 30px; position: relative; overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(244,248,255,.98));
+    }
+    .detail-panel::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+    .detail-panel ul { margin: 0; padding-left: 1.1rem; }
+    .detail-panel li { color: var(--muted); margin-bottom: 10px; line-height: 1.75; }
+    .detail-badges { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
+    .detail-badges span {
+      background: linear-gradient(135deg, rgba(31,95,191,.08), rgba(255,159,28,.10)); color: var(--primary-dark); border: 1px solid rgba(14,37,82,.08);
+      padding: 10px 14px; border-radius: 50px; font-weight: 700; font-size: .92rem;
+    }
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .module-item {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid rgba(14,37,82,.08);
+      color: var(--text);
+      font-weight: 600;
+      line-height: 1.6;
+      box-shadow: 0 10px 24px rgba(7,32,73,.06);
+      transition: .35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .module-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(31,95,191,.10), rgba(255,159,28,.12));
+      opacity: 0;
+      transition: opacity .35s ease;
+    }
+    .module-item:hover {
+      transform: translateY(-6px) scale(1.02);
+      border-color: rgba(31,95,191,.14);
+      box-shadow: 0 16px 30px rgba(7,32,73,.10);
+    }
+    .module-item:hover::before { opacity: 1; }
+    .feature-stack {
+      display: grid; gap: 14px; margin-top: 18px;
+    }
+    .feature-pill-card {
+      padding: 16px 20px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #0d2f6b, #1f5fbf);
+      color: #fff;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 12px 30px rgba(31,95,191,.25);
+      transition: .35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-pill-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,.06), transparent 45%);
+      opacity: 0;
+      transition: opacity .35s ease;
+    }
+    .feature-pill-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 18px 34px rgba(31,95,191,.28);
+    }
+    .feature-pill-card:hover::before { opacity: 1; }
+    .feature-pill-card i { color: #ffbb55; font-size: 1.05rem; }
+    .back-btn { margin-bottom: 22px; }
+
+    .modal-content {
+      border: none; border-radius: 28px; overflow: hidden; background: linear-gradient(160deg, #081c46, #12397f 62%, #1f5fbf 100%); color: #fff;
+      box-shadow: 0 30px 80px rgba(7,32,73,.25);
+    }
+    #offerModal { z-index: 1060; }
+    .modal-backdrop { z-index: 1055; }
+    canvas.confetti-canvas {
+      pointer-events: none !important;
+      z-index: 2000 !important;
+    }
+    .modal-body { padding: 34px; position: relative; }
+    .offer-badge {
+      display: inline-block; padding: 8px 14px; border-radius: 50px; background: rgba(255,159,28,.18); color: #ffd08a; font-weight: 700; margin-bottom: 18px;
+    }
+    .offer-urgency {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin: 18px 0 20px;
+    }
+    .offer-chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.12);
+      color: #fff;
+      font-weight: 700;
+      font-size: .9rem;
+    }
+    .offer-chip strong { color: #ffd08a; }
+    .countdown-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 16px;
+      background: rgba(255,159,28,.14);
+      border: 1px solid rgba(255,255,255,.14);
+      font-weight: 700;
+      color: #fff;
+    }
+    .countdown-timer { display: inline-flex; gap: 8px; align-items: center; }
+    .countdown-unit {
+      min-width: 56px;
+      text-align: center;
+      padding: 8px 10px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .countdown-unit span { display: block; line-height: 1.1; }
+    .countdown-unit .num { font-size: 1.1rem; font-weight: 800; color: #fff; }
+    .countdown-unit .lbl {
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: rgba(255,255,255,.75);
+      margin-top: 4px;
+    }
+    .offer-list { list-style: none; padding: 0; margin: 18px 0 0; }
+    .offer-list li { display: flex; gap: 10px; margin-bottom: 12px; color: rgba(255,255,255,.88); }
+    .offer-list i { color: #ffbf66; margin-top: 3px; }
+    .pulse-cta { animation: pulseCta 1.6s infinite; }
+    @keyframes pulseCta {
+      0% { box-shadow: 0 0 0 0 rgba(255,255,255,.25); }
+      70% { box-shadow: 0 0 0 14px rgba(255,255,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+    }
+
+    footer { background: #081b43; color: rgba(255,255,255,.85); padding: 28px 0; }
+    .footer-brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-family: 'Outfit', sans-serif; }
+    .footer-brand img { width: 44px; height: 44px; border-radius: 12px; object-fit: cover; }
+    .footer-links a, .social-links a { color: rgba(255,255,255,.84); text-decoration: none; margin-left: 14px; transition: .3s ease; }
+    .footer-links a:hover, .social-links a:hover { color: #ffbb55; }
+
+    .reveal { opacity: 0; transform: translateY(40px); transition: all .8s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    .floating-shape {
+      position: absolute; border-radius: 50%; opacity: .35; filter: blur(4px); animation: floatY 7s ease-in-out infinite; pointer-events: none;
+    }
+    .shape-1 { width: 18px; height: 18px; background: var(--secondary); top: 18%; left: 8%; }
+    .shape-2 { width: 24px; height: 24px; background: var(--primary); top: 56%; right: 10%; animation-delay: 1s; }
+    .shape-3 { width: 12px; height: 12px; background: var(--secondary-dark); bottom: 14%; left: 48%; animation-delay: 1.8s; }
+
+    @keyframes floatY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-18px); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 991px) {
+      .navbar-collapse {
+        background: rgba(255,255,255,.94); padding: 16px; border-radius: 18px; margin-top: 12px; box-shadow: 0 14px 40px rgba(8,32,74,.08);
+      }
+      .hero { min-height: auto; padding-top: 130px; padding-bottom: 80px; }
+      .hero-card { margin-top: 40px; }
+      .contact-banner, .form-card, .detail-hero, .detail-panel { padding: 28px; }
+      .detail-grid { grid-template-columns: 1fr; }
+      .highlight-strip { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 767px) {
+      section { padding: 80px 0; }
+      .hero-points { flex-direction: column; align-items: flex-start; }
+      .stats-grid, .highlight-strip { grid-template-columns: 1fr; }
+      .footer-links, .social-links { margin-top: 12px; }
+      .footer-links a, .social-links a { margin: 0 10px 0 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="floating-shape shape-1"></div>
+  <div class="floating-shape shape-2"></div>
+  <div class="floating-shape shape-3"></div>
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#home">
+            <img src="logo.png" alt="Provenza Infotech Logo" class="main-logo">
+          </a>
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-3 mt-3 mt-lg-0"><a class="btn btn-theme" href="#enquiry">Enquiry Now</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="mainWebsite">
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7 hero-content reveal">
+            <div class="hero-badge">
+              <i class="bi bi-stars"></i>
+              AI Focused • Gen AI Powered • Job Ready Training
+            </div>
+            <h1>Build skills with <span>Gen AI, expert mentors</span> and real career outcomes.</h1>
+            <p>
+              Provenza Infotech delivers quality-focused, AI-driven career training for students, job seekers, and career-gap learners.
+              With industry experts, real-world projects, hands-on learning, one-to-one mentorship, prompt engineering practice,
+              interview preparation, and resume support, we help every learner become truly job ready.
+            </p>
+
+            <div class="hero-points">
+              <span><i class="bi bi-check-circle-fill text-warning"></i> Only 5 students per batch</span>
+              <span><i class="bi bi-check-circle-fill text-warning"></i> One-to-one mentorship</span>
+              <span><i class="bi bi-check-circle-fill text-warning"></i> Real-world projects</span>
+            </div>
+
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#courses" class="btn btn-theme">Explore Courses</a>
+              <a href="#callback" class="btn btn-outline-theme">Request a Call Back</a>
+            </div>
+          </div>
+
+          <div class="col-lg-5 hero-visual reveal">
+            <div class="hero-card">
+              <div class="brand-mini">
+                <img src="logo.png" alt="Provenza Infotech">
+                <div>
+                  <h5>Provenza Infotech</h5>
+                  <small>Quality training. Small batches. Career-focused learning.</small>
+                </div>
+              </div>
+
+              <div class="mb-2">
+                <span class="tech-pill"><i class="bi bi-cpu"></i> Gen AI Focus</span>
+                <span class="tech-pill"><i class="bi bi-person-workspace"></i> 1-to-1 Mentorship</span>
+                <span class="tech-pill"><i class="bi bi-file-earmark-person"></i> Resume Prep</span>
+                <span class="tech-pill"><i class="bi bi-mic"></i> Interview Training</span>
+              </div>
+
+              <div class="stats-grid">
+                <div class="stat-box">
+                  <h3>5</h3>
+                  <p>Students only in each batch for focused mentoring</p>
+                </div>
+                <div class="stat-box">
+                  <h3>Gen AI</h3>
+                  <p>Prompt engineering and AI-assisted workflows included</p>
+                </div>
+                <div class="stat-box">
+                  <h3>2 hrs</h3>
+                  <p>Daily sessions with practical implementation focus</p>
+                </div>
+                <div class="stat-box">
+                  <h3>Job Ready</h3>
+                  <p>Projects, interview prep, and professional guidance</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses">
+      <div class="container">
+        <div class="section-title text-center mx-auto reveal">
+          <span class="tag">Courses</span>
+          <h2>Specialized programs built for real career transformation</h2>
+          <p>
+            Every course combines core technical skills with Gen AI exposure, real-world projects, hands-on practice,
+            personalized mentorship, and job-readiness support.
+          </p>
+        </div>
+
+        <div class="course-row reveal">
+          <div class="course-item">
+            <div class="course-card" onclick="openCourse('python')">
+              <div class="go-corner"><div class="go-arrow">→</div></div>
+              <div class="course-badge">Limited Seats (5 Only)</div>
+              <div class="course-icon"><i class="bi bi-braces-asterisk"></i></div>
+              <span class="course-title">Python Full Stack Development</span>
+              <span class="course-desc">Python, APIs, frontend, backend, databases, Gen AI workflows, and career-ready project learning.</span>
+              <div class="course-mini-tags">
+                <span>Projects</span>
+                <span>AI</span>
+                <span>Mentorship</span>
+              </div>
+              <a href="javascript:void(0)" class="course-link">View Details <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="course-item">
+            <div class="course-card" onclick="openCourse('dotnet')">
+              <div class="go-corner"><div class="go-arrow">→</div></div>
+              <div class="course-badge">Limited Seats (5 Only)</div>
+              <div class="course-icon"><i class="bi bi-microsoft"></i></div>
+              <span class="course-title">.NET Core Full Stack Development</span>
+              <span class="course-desc">Enterprise-ready development with .NET Core, APIs, databases, AI tools, and guided implementation.</span>
+              <div class="course-mini-tags">
+                <span>Projects</span>
+                <span>Interview</span>
+                <span>Expert</span>
+              </div>
+              <a href="javascript:void(0)" class="course-link">View Details <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="course-item">
+            <div class="course-card" onclick="openCourse('java')">
+              <div class="go-corner"><div class="go-arrow">→</div></div>
+              <div class="course-badge">Limited Seats (5 Only)</div>
+              <div class="course-icon"><i class="bi bi-cup-hot"></i></div>
+              <span class="course-title">Java Full Stack Development</span>
+              <span class="course-desc">Java backend, frontend practice, REST APIs, SQL, Gen AI support, and interview-readiness training.</span>
+              <div class="course-mini-tags">
+                <span>Java</span>
+                <span>Practice</span>
+                <span>Resume</span>
+              </div>
+              <a href="javascript:void(0)" class="course-link">View Details <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="course-item">
+            <div class="course-card" onclick="openCourse('marketing')">
+              <div class="go-corner"><div class="go-arrow">→</div></div>
+              <div class="course-badge">Limited Seats (5 Only)</div>
+              <div class="course-icon"><i class="bi bi-megaphone"></i></div>
+              <span class="course-title">Digital Marketing</span>
+              <span class="course-desc">SEO, social media, paid ads, analytics, Gen AI content workflows, and job-focused campaign learning.</span>
+              <div class="course-mini-tags">
+                <span>SEO</span>
+                <span>Gen AI</span>
+                <span>Campaigns</span>
+              </div>
+              <a href="javascript:void(0)" class="course-link">View Details <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-title reveal">
+          <span class="tag">About</span>
+          <h2>Focused on quality training, deeper mentoring, and better career outcomes</h2>
+          <p>
+            We believe career training should be personal, practical, and result oriented. That is why our programs are designed
+            around small batch learning, strong trainer interaction, and complete job-readiness support.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-lg-6 reveal">
+            <div class="about-card h-100">
+              <div class="feature-icon"><i class="bi bi-buildings"></i></div>
+              <h4>Who We Are</h4>
+              <p>
+                Provenza Infotech is an AI-focused career training institute delivering high-quality learning experiences for students,
+                job seekers, and career-gap candidates. Our trainers and industry experts guide learners through practical modules,
+                real-world projects, and hands-on implementation to make them strong and confident in their chosen field.
+              </p>
+              <p class="mb-0">
+                We do not believe in crowded classrooms. We believe in focused training, personal attention, and helping each student become truly job ready.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6 reveal">
+            <div class="about-card h-100">
+              <div class="feature-icon"><i class="bi bi-gem"></i></div>
+              <h4>Why Provenza</h4>
+              <ul class="why-list">
+                <li><i class="bi bi-check-circle-fill"></i><span>Gen AI focused learning with prompt engineering as a practical skill.</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Only 5 students in a batch for better attention and stronger placement readiness.</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Trainers and industry experts with real implementation insights.</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Hands-on learning, real-world projects, and daily guided practice.</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>One-to-one mentorship, resume preparation, and interview preparation support.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-strip reveal">
+          <div class="highlight-box">
+            <i class="bi bi-people-fill"></i>
+            <h5>Small Batch Model</h5>
+            <p>Maximum 5 students per batch for focused learning and stronger outcomes.</p>
+          </div>
+          <div class="highlight-box">
+            <i class="bi bi-cpu-fill"></i>
+            <h5>Gen AI Skills</h5>
+            <p>Prompt engineering and AI productivity methods built into the learning journey.</p>
+          </div>
+          <div class="highlight-box">
+            <i class="bi bi-kanban-fill"></i>
+            <h5>Real Projects</h5>
+            <p>Build practical confidence through industry-style tasks and project work.</p>
+          </div>
+          <div class="highlight-box">
+            <i class="bi bi-briefcase-fill"></i>
+            <h5>Placement Readiness</h5>
+            <p>Resume preparation, interview training, and mentorship to become job ready.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row g-4">
+          <div class="col reveal">
+            <div class="feature-card text-center">
+              <div class="feature-icon mx-auto"><i class="bi bi-robot"></i></div>
+              <h4>Prompt Engineering</h4>
+              <p>Students learn to use Gen AI tools effectively for coding, content, productivity, and problem solving.</p>
+            </div>
+          </div>
+
+          <div class="col reveal">
+            <div class="feature-card text-center">
+              <div class="feature-icon mx-auto"><i class="bi bi-laptop"></i></div>
+              <h4>Hands-on Learning</h4>
+              <p>Practical sessions every day to turn concepts into working skills and implementation confidence.</p>
+            </div>
+          </div>
+
+          <div class="col reveal">
+            <div class="feature-card text-center">
+              <div class="feature-icon mx-auto"><i class="bi bi-person-video3"></i></div>
+              <h4>One-to-One Mentorship</h4>
+              <p>Closer trainer interaction helps every student progress with clarity, confidence, and accountability.</p>
+            </div>
+          </div>
+
+          <div class="col reveal">
+            <div class="feature-card text-center">
+              <div class="feature-icon mx-auto"><i class="bi bi-award"></i></div>
+              <h4>Interview & Resume Prep</h4>
+              <p>We prepare students with resume support, communication guidance, and interview-facing confidence.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="enquiry">
+      <div class="container">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-5 reveal">
+            <div class="contact-banner h-100 d-flex flex-column justify-content-center">
+              <span class="tag" style="background: rgba(255,255,255,0.12); color: #fff;">Enquiry Now</span>
+              <h2 class="mb-3" style="font-size: clamp(2rem,4vw,3rem); font-weight: 800; position: relative; z-index: 1;">Get personal guidance for the right course</h2>
+              <p style="color: rgba(255,255,255,0.82); line-height: 1.9; position: relative; z-index: 1;">
+                Share your details and our team will help you choose the right program based on your background,
+                goals, and career plan.
+              </p>
+              <div class="mt-3 d-flex flex-wrap gap-3 position-relative" style="z-index: 1;">
+                <a href="#callback" class="btn btn-theme">Request a Call Back</a>
+                <a href="#contact" class="btn btn-outline-light rounded-4 px-4 py-3 fw-bold">Contact Us</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7 reveal">
+            <div class="form-card h-100">
+              <div class="section-title mb-4">
+                <span class="tag">Student Enquiry Form</span>
+                <h2 class="mb-2" style="font-size: 2rem;">Let’s connect</h2>
+                <p class="mb-0">Fill the form and our team will contact you soon.</p>
+              </div>
+
+              <form id="enquiryForm" action="https://formspree.io/f/xkopwnwa" method="POST">
+                <div class="row g-3">
+              
+                  <div class="col-md-6">
+                    <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                  </div>
+              
+                  <div class="col-md-6">
+                    <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required>
+                  </div>
+              
+                  <div class="col-md-6">
+                    <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                  </div>
+              
+                  <div class="col-md-6">
+                    <select name="course" class="form-select" required>
+                      <option value="">Select Course</option>
+                      <option>Python Full Stack Development</option>
+                      <option>.NET Core Full Stack Development</option>
+                      <option>Java Full Stack Development</option>
+                      <option>Digital Marketing</option>
+                    </select>
+                  </div>
+              
+                  <div class="col-md-6">
+                    <select name="status" class="form-select">
+                      <option value="">Your Current Status</option>
+                      <option>Student</option>
+                      <option>Job Seeker</option>
+                      <option>Career Gap</option>
+                      <option>Working Professional</option>
+                    </select>
+                  </div>
+              
+                  <div class="col-md-6">
+                    <input type="text" name="preferred_time" class="form-control" placeholder="Preferred Call Time">
+                  </div>
+              
+                  <div class="col-12">
+                    <textarea name="message" class="form-control" placeholder="Tell us about your goal or what course you are interested in"></textarea>
+                  </div>
+              
+                  <input type="hidden" name="_subject" value="New Enquiry - Provenza Infotech">
+              
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-theme w-100" id="enquirySubmitBtn">
+                      Submit Enquiry
+                    </button>
+                    <div id="enquiryStatus" class="form-note mt-3"></div>
+                  </div>
+              
+                </div>
+              </form>            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="callback">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6 reveal">
+            <div class="section-title mb-0">
+              <span class="tag">Request a Call Back</span>
+              <h2>Need help choosing the best course?</h2>
+              <p>
+                Our team can guide you based on your background, current skill level, and career target.
+                We focus on helping each learner choose the right path and become industry ready.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6 reveal">
+            <div class="form-card">
+                <form id="callbackForm" action="https://formspree.io/f/xkopwnwa" method="POST">
+                    <div class="row g-3">
+                  
+                      <div class="col-md-6">
+                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                      </div>
+                  
+                      <div class="col-md-6">
+                        <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required>
+                      </div>
+                  
+                      <div class="col-12">
+                        <input type="text" name="best_time_to_call" class="form-control" placeholder="Best Time to Call">
+                      </div>
+                  
+                      <div class="col-12">
+                        <textarea name="message" class="form-control" placeholder="What would you like to know?"></textarea>
+                      </div>
+                  
+                      <input type="hidden" name="_subject" value="Call Back Request - Provenza Infotech">
+                  
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-theme w-100" id="callbackSubmitBtn">
+                          Request Call Back
+                        </button>
+                        <div id="callbackStatus" class="form-note mt-3"></div>
+                      </div>
+                  
+                    </div>
+                  </form>            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-title text-center mx-auto reveal">
+          <span class="tag">Contact</span>
+          <h2>Let’s build your future together</h2>
+          <p>Add your real contact details here and we can update them next.</p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-md-4 reveal">
+            <div class="contact-card text-center">
+              <div class="contact-icon mx-auto"><i class="bi bi-geo-alt"></i></div>
+              <h5>Location</h5>
+              <p>Kerala, India<br>Update with your exact address</p>
+            </div>
+          </div>
+          <div class="col-md-4 reveal">
+            <div class="contact-card text-center">
+              <div class="contact-icon mx-auto"><i class="bi bi-telephone"></i></div>
+              <h5>Phone</h5>
+              <p>+91 XXXXX XXXXX<br>Update with your contact number</p>
+            </div>
+          </div>
+          <div class="col-md-4 reveal">
+            <div class="contact-card text-center">
+              <div class="contact-icon mx-auto"><i class="bi bi-envelope"></i></div>
+              <h5>Email</h5>
+              <p>hello@provenzainfotech.com<br>Update with your official email</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="detail-page" id="python-page">
+    <div class="container">
+      <button class="btn btn-outline-theme back-btn" onclick="goHome()"><i class="bi bi-arrow-left"></i> Back to Website</button>
+      <div class="detail-hero">
+        <span class="tag" style="background: rgba(255,255,255,.1); color: #fff;">Course Details</span>
+        <h2>Python Full Stack Development</h2>
+        <p>Become job ready in full stack web development with Python, frontend frameworks, backend architecture, APIs, databases, deployment basics, Gen AI tools, and prompt engineering practice.</p>
+        <div class="detail-top-meta">
+          <span>5-6 Months</span>
+          <span>2 Hours Daily</span>
+          <span>Monday - Friday</span>
+          <span>Online</span>
+        </div>
+      </div>
+      <div class="detail-grid">
+        <div class="detail-panel">
+          <h4>Course Overview</h4>
+          <p>This program is designed for learners who want practical full stack skills with strong implementation ability. The course combines coding fundamentals, project development, AI-assisted productivity, and job-readiness guidance.</p>
+          <h4>Modules</h4>
+          <div class="module-grid">
+            <div class="module-item">Programming Fundamentals with Python</div>
+            <div class="module-item">HTML, CSS, JavaScript and Responsive UI</div>
+            <div class="module-item">Frontend Framework Basics</div>
+            <div class="module-item">Python Backend Framework and REST APIs</div>
+            <div class="module-item">Database Design and SQL</div>
+            <div class="module-item">Authentication, Deployment and Git</div>
+            <div class="module-item">Gen AI Tools and Prompt Engineering</div>
+            <div class="module-item">Mini Projects, Major Project, Resume and Interview Prep</div>
+          </div>
+        </div>
+        <div class="detail-panel">
+          <h4>Features</h4>
+          <div class="feature-stack">
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Real-world projects</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Hands-on learning</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>One-to-one mentorship</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Prompt engineering practice</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Resume and interview preparation</span></div>
+          </div>
+          <div class="detail-badges">
+            <span>Duration: 5-6 Months</span>
+            <span>Session: 2 Hours Daily</span>
+            <span>Schedule: Monday - Friday</span>
+            <span>Mode: Online</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail-page" id="dotnet-page">
+    <div class="container">
+      <button class="btn btn-outline-theme back-btn" onclick="goHome()"><i class="bi bi-arrow-left"></i> Back to Website</button>
+      <div class="detail-hero">
+        <span class="tag" style="background: rgba(255,255,255,.1); color: #fff;">Course Details</span>
+        <h2>.NET Core Full Stack Development</h2>
+        <p>Gain the skills to build modern, scalable web applications using .NET Core, frontend technologies, databases, APIs, and AI-enhanced development workflows.</p>
+        <div class="detail-top-meta">
+          <span>5-6 Months</span>
+          <span>2 Hours Daily</span>
+          <span>Monday - Friday</span>
+          <span>Online</span>
+        </div>
+      </div>
+      <div class="detail-grid">
+        <div class="detail-panel">
+          <h4>Course Overview</h4>
+          <p>This course is designed for learners who want strong full stack development skills with enterprise-level concepts, practical coding, project experience, and complete career preparation.</p>
+          <h4>Modules</h4>
+          <div class="module-grid">
+            <div class="module-item">C# Programming Fundamentals</div>
+            <div class="module-item">HTML, CSS, JavaScript and UI Basics</div>
+            <div class="module-item">Frontend Framework Concepts</div>
+            <div class="module-item">.NET Core Backend Development</div>
+            <div class="module-item">REST APIs and Authentication</div>
+            <div class="module-item">SQL, Entity Framework and Data Management</div>
+            <div class="module-item">Gen AI Tools and Prompt Engineering</div>
+            <div class="module-item">Real Project, Resume Building and Interview Preparation</div>
+          </div>
+        </div>
+        <div class="detail-panel">
+          <h4>Features</h4>
+          <div class="feature-stack">
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Project-based learning</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Expert trainer guidance</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>One-to-one mentorship</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Interview and resume support</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>AI-focused productivity training</span></div>
+          </div>
+          <div class="detail-badges">
+            <span>Duration: 5-6 Months</span>
+            <span>Session: 2 Hours Daily</span>
+            <span>Schedule: Monday - Friday</span>
+            <span>Mode: Online</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail-page" id="java-page">
+    <div class="container">
+      <button class="btn btn-outline-theme back-btn" onclick="goHome()"><i class="bi bi-arrow-left"></i> Back to Website</button>
+      <div class="detail-hero">
+        <span class="tag" style="background: rgba(255,255,255,.1); color: #fff;">Course Details</span>
+        <h2>Java Full Stack Development</h2>
+        <p>Build full stack development expertise with Java, frontend tools, backend systems, database integration, API development, Gen AI tools, and job-readiness mentoring.</p>
+        <div class="detail-top-meta">
+          <span>5-6 Months</span>
+          <span>2 Hours Daily</span>
+          <span>Monday - Friday</span>
+          <span>Online</span>
+        </div>
+      </div>
+      <div class="detail-grid">
+        <div class="detail-panel">
+          <h4>Course Overview</h4>
+          <p>This course helps learners build strong Java full stack skills through practical classes, guided implementation, real projects, and complete support to become interview ready and placement focused.</p>
+          <h4>Modules</h4>
+          <div class="module-grid">
+            <div class="module-item">Core Java Programming</div>
+            <div class="module-item">HTML, CSS, JavaScript and Responsive Design</div>
+            <div class="module-item">Frontend Development Concepts</div>
+            <div class="module-item">Java Backend Framework Concepts</div>
+            <div class="module-item">REST APIs and Application Architecture</div>
+            <div class="module-item">Database Management and SQL</div>
+            <div class="module-item">Gen AI Tools and Prompt Engineering</div>
+            <div class="module-item">Project Development, Resume Support and Interview Preparation</div>
+          </div>
+        </div>
+        <div class="detail-panel">
+          <h4>Features</h4>
+          <div class="feature-stack">
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Real-world projects</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Hands-on coding practice</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Prompt engineering exposure</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>One-to-one mentoring</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Job-readiness support</span></div>
+          </div>
+          <div class="detail-badges">
+            <span>Duration: 5-6 Months</span>
+            <span>Session: 2 Hours Daily</span>
+            <span>Schedule: Monday - Friday</span>
+            <span>Mode: Online</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail-page" id="marketing-page">
+    <div class="container">
+      <button class="btn btn-outline-theme back-btn" onclick="goHome()"><i class="bi bi-arrow-left"></i> Back to Website</button>
+      <div class="detail-hero">
+        <span class="tag" style="background: rgba(255,255,255,.1); color: #fff;">Course Details</span>
+        <h2>Digital Marketing</h2>
+        <p>Master modern digital marketing with SEO, social media, paid campaigns, analytics, content planning, automation, and Gen AI tools for smart marketing execution.</p>
+        <div class="detail-top-meta">
+          <span>5-6 Months</span>
+          <span>2 Hours Daily</span>
+          <span>Monday - Friday</span>
+          <span>Online</span>
+        </div>
+      </div>
+      <div class="detail-grid">
+        <div class="detail-panel">
+          <h4>Course Overview</h4>
+          <p>This course is ideal for learners who want career-oriented digital marketing skills with practical campaign understanding, real-world execution methods, and AI-powered content and strategy workflows.</p>
+          <h4>Modules</h4>
+          <div class="module-grid">
+            <div class="module-item">Digital Marketing Fundamentals</div>
+            <div class="module-item">SEO and Search Visibility</div>
+            <div class="module-item">Social Media Strategy and Campaign Planning</div>
+            <div class="module-item">Paid Advertising Basics</div>
+            <div class="module-item">Content Marketing and Analytics</div>
+            <div class="module-item">Branding, Funnels and Lead Generation</div>
+            <div class="module-item">Gen AI for Content, Ideas and Productivity</div>
+            <div class="module-item">Campaign Projects, Resume and Interview Preparation</div>
+          </div>
+        </div>
+        <div class="detail-panel">
+          <h4>Features</h4>
+          <div class="feature-stack">
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Practical assignments</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Real campaign understanding</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Mentorship and career guidance</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Prompt engineering use cases</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Resume and interview support</span></div>
+          </div>
+          <div class="detail-badges">
+            <span>Duration: 5-6 Months</span>
+            <span>Session: 2 Hours Daily</span>
+            <span>Schedule: Monday - Friday</span>
+            <span>Mode: Online</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal fade" id="offerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="btn-close btn-close-white position-absolute end-0 top-0 m-4" data-bs-dismiss="modal" aria-label="Close"></button>
+          <span class="offer-badge">Foundation Batch Offer</span>
+          <h2 class="fw-bold mb-3">Limited seats available. Offer ending soon.</h2>
+          <p style="color: rgba(255,255,255,.86); line-height: 1.9; max-width: 700px;">
+            Join our foundation batch and get the advantage of focused training, one-to-one mentorship, Gen AI exposure,
+            and a small batch model with only 5 seats for better learning outcomes.
+          </p>
+          <div class="offer-urgency">
+            <div class="offer-chip">Only <strong>5 seats</strong> in each batch</div>
+            <div class="offer-chip">Next batch filling fast</div>
+            <div class="countdown-box">
+              <i class="bi bi-clock-history"></i>
+              <div class="countdown-timer" id="offerCountdown">
+                <div class="countdown-unit"><span class="num" id="cdDays">03</span><span class="lbl">Days</span></div>
+                <div class="countdown-unit"><span class="num" id="cdHours">00</span><span class="lbl">Hours</span></div>
+                <div class="countdown-unit"><span class="num" id="cdMinutes">00</span><span class="lbl">Mins</span></div>
+              </div>
+            </div>
+          </div>
+          <ul class="offer-list">
+            <li><i class="bi bi-check-circle-fill"></i><span>Only limited seats available in each batch</span></li>
+            <li><i class="bi bi-check-circle-fill"></i><span>Job-ready learning with projects, resume prep, and interview support</span></li>
+            <li><i class="bi bi-check-circle-fill"></i><span>Gen AI and prompt engineering included in training approach</span></li>
+          </ul>
+          <div class="mt-4 d-flex flex-wrap gap-3">
+            <a href="#enquiry" class="btn btn-light fw-bold px-4 py-3 rounded-4 pulse-cta" data-bs-dismiss="modal" onclick="setTimeout(() => document.getElementById('enquiry').scrollIntoView({behavior:'smooth'}), 250)">Enquiry Now</a>
+            <a href="#callback" class="btn btn-outline-light fw-bold px-4 py-3 rounded-4" data-bs-dismiss="modal" onclick="setTimeout(() => document.getElementById('callback').scrollIntoView({behavior:'smooth'}), 250)">Request Call Back</a>
+            <a href="https://wa.me/918848154618?text=Hi%20Provenza%20Infotech,%20I%20am%20interested%20in%20your%20courses." target="_blank" rel="noopener" class="btn btn-warning fw-bold px-4 py-3 rounded-4" data-bs-dismiss="modal">
+                <i class="bi bi-whatsapp me-2"></i>WhatsApp Us
+              </a>          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row align-items-center g-3">
+        <div class="col-lg-4">
+          <div class="footer-brand">
+            <img src="logo.png" alt="Provenza Infotech">
+            <span>PROVENZA INFOTECH</span>
+          </div>
+        </div>
+        <div class="col-lg-4 text-lg-center footer-links">
+          <a href="#home">Home</a>
+          <a href="#courses">Courses</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="col-lg-4 text-lg-end social-links">
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-linkedin"></i></a>
+          <a href="#"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('main section[id]');
+    const revealItems = document.querySelectorAll('.reveal');
+    const mainWebsite = document.getElementById('mainWebsite');
+    const detailPages = document.querySelectorAll('.detail-page');
+
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 160;
+        if (window.scrollY >= sectionTop) current = section.getAttribute('id');
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.12 });
+    revealItems.forEach(item => observer.observe(item));
+
+    function openCourse(course) {
+      mainWebsite.style.display = 'none';
+      detailPages.forEach(page => page.classList.remove('active'));
+      document.getElementById(`${course}-page`).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      navLinks.forEach(link => link.classList.remove('active'));
+    }
+
+    function goHome() {
+      detailPages.forEach(page => page.classList.remove('active'));
+      mainWebsite.style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    async function handleFormSubmit(formId, statusId, buttonId, successMessage) {
+  const form = document.getElementById(formId);
+  const statusBox = document.getElementById(statusId);
+  const submitBtn = document.getElementById(buttonId);
+
+  if (!form) return;
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    statusBox.textContent = "";
+    statusBox.style.color = "#66748d";
+
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Submitting...";
+
+    try {
+      const formData = new FormData(form);
+
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (response.ok) {
+        form.reset();
+        statusBox.textContent = successMessage;
+        statusBox.style.color = "#198754";
+      } else {
+        const data = await response.json();
+        if (data.errors) {
+          statusBox.textContent = data.errors.map(error => error.message).join(", ");
+        } else {
+          statusBox.textContent = "Something went wrong. Please try again.";
+        }
+        statusBox.style.color = "#dc3545";
+      }
+    } catch (error) {
+      statusBox.textContent = "Network error. Please check your connection and try again.";
+      statusBox.style.color = "#dc3545";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalBtnText;
+    }
+  });
+}
+
+handleFormSubmit(
+  "enquiryForm",
+  "enquiryStatus",
+  "enquirySubmitBtn",
+  "Thank you. Your enquiry has been submitted successfully. Our team will contact you soon."
+);
+
+handleFormSubmit(
+  "callbackForm",
+  "callbackStatus",
+  "callbackSubmitBtn",
+  "Thank you. Your call back request has been submitted successfully."
+);
+    // document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+    //   e.preventDefault();
+    //   alert('Thank you! Your enquiry has been received. We will contact you soon.');
+    //   this.reset();
+    // });
+
+    // document.getElementById('callbackForm').addEventListener('submit', function(e) {
+    //   e.preventDefault();
+    //   alert('Thank you! Your call back request has been submitted.');
+    //   this.reset();
+    // });
+
+    function launchConfetti() {
+      const duration = 2200;
+      const end = Date.now() + duration;
+      const defaults = { zIndex: 9999 };
+
+      confetti(Object.assign({}, defaults, {
+        particleCount: 120,
+        spread: 95,
+        origin: { y: 0.45 },
+        colors: ['#1f5fbf', '#0d2f6b', '#ff9f1c', '#ffb347']
+      }));
+
+      (function frame() {
+        confetti(Object.assign({}, defaults, {
+          particleCount: 6,
+          angle: 60,
+          spread: 70,
+          origin: { x: 0, y: 0.6 },
+          colors: ['#1f5fbf', '#ff9f1c']
+        }));
+
+        confetti(Object.assign({}, defaults, {
+          particleCount: 6,
+          angle: 120,
+          spread: 70,
+          origin: { x: 1, y: 0.6 },
+          colors: ['#0d2f6b', '#ffb347']
+        }));
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      })();
+    }
+
+    function startOfferCountdown() {
+      const endTime = new Date(Date.now() + 3 * 24 * 60 * 60 * 1000);
+      const daysEl = document.getElementById('cdDays');
+      const hoursEl = document.getElementById('cdHours');
+      const minsEl = document.getElementById('cdMinutes');
+      if (!daysEl || !hoursEl || !minsEl) return;
+
+      function updateCountdown() {
+        const now = new Date();
+        const diff = endTime - now;
+        if (diff <= 0) {
+          daysEl.textContent = '00';
+          hoursEl.textContent = '00';
+          minsEl.textContent = '00';
+          return;
+        }
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const mins = Math.floor((diff / (1000 * 60)) % 60);
+        daysEl.textContent = String(days).padStart(2, '0');
+        hoursEl.textContent = String(hours).padStart(2, '0');
+        minsEl.textContent = String(mins).padStart(2, '0');
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 60000);
+    }
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const modalEl = document.getElementById('offerModal');
+        const offerModal = new bootstrap.Modal(modalEl);
+        offerModal.show();
+        setTimeout(() => {
+          launchConfetti();
+          startOfferCountdown();
+        }, 250);
+      }, 1200);
+    });
+  </script>
+</body>
+</html>
