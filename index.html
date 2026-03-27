@@ -1,0 +1,2454 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Provenza Infotech | AI-Focused Career Training Institute</title>
+  <link rel="icon" type="image/png" href="assets/log.png">
+  <meta name="description" content="Provenza Infotech offers AI-focused career training in Python Full Stack, .NET Core Full Stack, Java Full Stack, and Digital Marketing with real-world projects, hands-on learning, and one-to-one mentorship." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+
+    :root {
+      --primary: #1f5fbf;
+      --primary-dark: #0b2455;
+      --primary-deep: #071737;
+      --secondary: #ff9f1c;
+      --secondary-dark: #ea7d00;
+      --text: #10203a;
+      --muted: #66748d;
+      --light: #f3f7ff;
+      --white: #ffffff;
+      --border: rgba(255,255,255,0.1);
+      --shadow: 0 20px 60px rgba(8, 26, 67, 0.16);
+      --radius: 26px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(31,95,191,0.10), transparent 24%),
+        radial-gradient(circle at top right, rgba(255,159,28,0.10), transparent 24%),
+        linear-gradient(180deg, #f9fbff 0%, #eef4ff 100%);
+      overflow-x: hidden;
+    }
+
+    h1,h2,h3,h4,h5,h6,.navbar-brand { font-family: 'Outfit', sans-serif; }
+    section { padding: 52px 0; position: relative; }
+
+    .section-title { max-width: 720px; margin-bottom: 20px; }
+    .section-title .tag {
+      display: inline-block; padding: 8px 16px; border-radius: 50px;
+      background: rgba(31,95,191,0.08); color: var(--primary);
+      font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+      font-size: .8rem; margin-bottom: 14px;
+    }
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3.1rem); font-weight: 800; line-height: 1.08; margin-bottom: 14px;
+    }
+    .section-title p { color: var(--muted); font-size: 1.03rem; line-height: 1.85; }
+
+    .navbar {
+      height: 92px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,.98);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 12px 28px rgba(7, 23, 55, 0.07);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 1100;
+      transition: box-shadow .25s ease, background .25s ease;
+    }
+
+    .navbar.scrolled {
+      height: 92px;
+      background: rgba(255,255,255,.99);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 14px 30px rgba(7, 23, 55, 0.09);
+    }
+
+    .navbar .container {
+      height: 92px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar-brand {
+      position: relative;
+      display: block;
+      width: 350px;
+      height: 92px;
+      padding: 0;
+      margin: 0;
+      flex-shrink: 0;
+      overflow: visible;
+    }
+
+    .nav-logo {
+      position: absolute;
+      left: -62;
+      top: 65%;
+      transform: translateY(-50%);
+      height: 246px;
+      width: auto;
+      max-width: 392px;
+      object-fit: contain;
+    }
+
+    .navbar-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .navbar-nav .nav-link {
+      position: relative;
+      color: var(--primary-dark) !important;
+      font-weight: 800;
+      font-size: 1.18rem;
+      padding: 8px 6px !important;
+      margin: 0 14px;
+      background: transparent !important;
+      transition: color .3s ease;
+    }
+
+    .navbar-nav .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform .35s ease;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: var(--primary) !important;
+    }
+
+    .navbar-nav .nav-link:hover::after,
+    .navbar-nav .nav-link.active::after {
+      transform: scaleX(1);
+    }
+
+    .btn-enquiry {
+      background: linear-gradient(135deg, var(--secondary), #ffb347);
+      color: #fff !important;
+      font-weight: 800;
+      border: none;
+      border-radius: 14px;
+      padding: 12px 22px;
+      box-shadow: 0 12px 24px rgba(255,159,28,.22);
+      transition: all .3s ease;
+    }
+
+    .btn-enquiry:hover {
+      background: linear-gradient(135deg, #ea7d00, var(--secondary));
+      color: #fff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 16px 28px rgba(255,159,28,.30);
+    }
+
+    .btn-theme {
+      background: linear-gradient(135deg, #3b82f6, #60a5fa);
+      color: #fff;
+    }
+    .btn-theme:hover { transform: translateY(-2px); color: #fff; }
+    .btn-outline-theme {
+      border: 2px solid rgba(16,32,58,.12); color: var(--text); border-radius: 14px;
+      padding: 12px 24px; font-weight: 700; background: rgba(255,255,255,.75); transition: .3s ease;
+    }
+    .btn-outline-theme:hover { border-color: var(--secondary); color: var(--secondary-dark); transform: translateY(-2px); }
+
+    .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 176px; overflow: hidden; }
+    .hero::before, .hero::after { content: ''; position: absolute; border-radius: 50%; filter: blur(22px); z-index: 0; }
+    .hero::before {
+      width: 360px; height: 360px; background: rgba(31,95,191,.18); top: 90px; right: -80px; animation: floatY 6s ease-in-out infinite;
+    }
+    .hero::after {
+      width: 260px; height: 260px; background: rgba(255,159,28,.18); bottom: 80px; left: -80px; animation: floatY 8s ease-in-out infinite reverse;
+    }
+    .hero-content,.hero-visual { position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 50px;
+      background: rgba(255,255,255,.82); border: 1px solid rgba(31,95,191,.12);
+      box-shadow: 0 10px 30px rgba(12,37,80,.06); font-weight: 700; color: var(--primary-dark); margin-bottom: 22px;
+    }
+    .hero h1 { font-size: clamp(2.6rem, 5vw, 4.9rem); font-weight: 800; line-height: 1.02; letter-spacing: -.03em; margin-bottom: 20px; }
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero p { max-width: 680px; color: var(--muted); font-size: 1.08rem; line-height: 1.95; margin-bottom: 28px; }
+    .hero-points { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 30px; }
+    .hero-points span {
+      display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 50px;
+      background: rgba(255,255,255,.85); border: 1px solid rgba(16,32,58,.08); font-weight: 600; font-size: .95rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(8,24,61,.98), rgba(9,34,84,.97));
+      border-radius: 30px; padding: 30px; color: white; box-shadow: 0 30px 60px rgba(9,31,78,.25);
+      position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,.07);
+      animation: floatY 6s ease-in-out infinite;
+    }
+    .hero-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at top right, rgba(255,159,28,.22), transparent 35%);
+      pointer-events: none;
+    }
+    .brand-mini { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    .brand-mini img {
+      width: 62px; height: 62px; object-fit: cover; border-radius: 18px; background: rgba(255,255,255,.08); padding: 4px;
+    }
+    .brand-mini h5 { margin: 0; font-weight: 800; letter-spacing: .03em; }
+    .brand-mini small { color: rgba(255,255,255,.75); }
+    .tech-pill {
+      display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 50px; padding: 10px 14px; margin: 6px 6px 0 0; font-size: .9rem; color: rgba(255,255,255,.92);
+    }
+    .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 24px; }
+    .stat-box {
+      padding: 18px; border-radius: 20px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.08); backdrop-filter: blur(10px);
+    }
+    .stat-box h3 { font-size: 1.9rem; color: #fff; font-weight: 800; margin-bottom: 8px; }
+    .stat-box p { margin: 0; font-size: .95rem; color: rgba(255,255,255,.78); line-height: 1.6; }
+
+    .course-card, .feature-card, .about-card, .contact-card, .form-card, .detail-panel {
+      padding: 32px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(243,247,255,.98));
+      border: 1px solid rgba(14,37,82,.08);
+      box-shadow: 0 20px 50px rgba(7,32,73,.12);
+      position: relative;
+      transition: .4s ease;
+      overflow: hidden;
+    }
+
+    .course-row {
+      display: grid !important;
+      grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+      gap: 24px !important;
+      align-items: stretch !important;
+      margin-top: 2rem;
+    }
+    .course-item { min-width: 0; }
+
+    .course-card {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: 100%;
+      min-height: 390px;
+      height: 100%;
+      background: linear-gradient(180deg, #f8fbff 0%, #eef4ff 100%);
+      border-radius: 28px;
+      padding: 24px 22px 22px;
+      text-decoration: none;
+      overflow: hidden;
+      border: 1px solid rgba(31,95,191,.09);
+      box-shadow: 0 18px 40px rgba(8, 32, 74, 0.10);
+      transition: transform .38s ease, box-shadow .38s ease, border-color .38s ease, background .38s ease;
+      cursor: pointer;
+      isolation: isolate;
+      transform-style: preserve-3d;
+    }
+    .course-card::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: -22px;
+      right: -22px;
+      width: 68px;
+      height: 68px;
+      border-radius: 999px;
+      transform: scale(1);
+      transform-origin: 50% 50%;
+      transition: transform .45s ease-out;
+      background: linear-gradient(135deg, #0d2f6b, #1f5fbf);
+    }
+    .course-card::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      background: radial-gradient(circle at top right, rgba(255,255,255,.22), transparent 25%), radial-gradient(circle at bottom left, rgba(255,159,28,.10), transparent 22%);
+      opacity: .7;
+      z-index: -1;
+      pointer-events: none;
+    }
+    .course-card:hover::before,
+    .course-card.mobile-card-animate::before {
+      transform: scale(24);
+    }
+    .course-card:hover,
+    .course-card.mobile-card-animate {
+      transform: perspective(1000px) rotateX(4deg) rotateY(-4deg) translateY(-12px);
+      box-shadow: 0 30px 70px rgba(8, 32, 74, 0.18), 0 0 35px rgba(31,95,191,.16);
+      border-color: rgba(31,95,191,.14);
+      background: linear-gradient(180deg, #f4f9ff 0%, #e9f2ff 100%);
+    }
+    .course-badge {
+      align-self: flex-start;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff9f1c, #ffb347);
+      color: #fff;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .02em;
+      box-shadow: 0 10px 24px rgba(255,159,28,.24);
+      margin-bottom: 16px;
+    }
+    .course-icon {
+      width: 74px;
+      height: 74px;
+      border-radius: 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      margin-bottom: 18px;
+      background: linear-gradient(135deg, rgba(31,95,191,.12), rgba(255,159,28,.14));
+      color: var(--primary-dark);
+      border: 1px solid rgba(31,95,191,.08);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.25);
+      transition: all .45s ease;
+      flex-shrink: 0;
+    }
+    .course-title {
+      color: #1a2640;
+      font-size: 1.38rem;
+      line-height: 1.35;
+      font-weight: 700;
+      margin-bottom: .7em;
+      transition: color .45s ease;
+      display: block;
+      min-height: 74px;
+    }
+    .course-desc {
+      font-size: .98rem;
+      font-weight: 400;
+      line-height: 1.75;
+      color: #53627b;
+      transition: color .45s ease;
+      display: block;
+      margin-bottom: 1rem;
+      min-height: 118px;
+    }
+    .course-mini-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+      margin-bottom: 18px;
+      min-height: 42px;
+    }
+    .course-mini-tags span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(31,95,191,.08);
+      border: 1px solid rgba(31,95,191,.10);
+      color: var(--primary-dark);
+      font-size: .78rem;
+      font-weight: 700;
+      transition: all .35s ease;
+    }
+    .course-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 18px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #1f5fbf, #0d2f6b);
+      color: #fff;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(31,95,191,.22);
+      transition: all .35s ease;
+      width: fit-content;
+      margin-top: auto;
+    }
+    .course-card:hover .course-link,
+    .course-card.mobile-card-animate .course-link,
+    .course-link:hover {
+      background: linear-gradient(135deg, #ff9f1c, #ffb347);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(255,159,28,.30);
+      transform: translateY(-2px);
+    }
+    .go-corner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: 2.8em;
+      height: 2.8em;
+      overflow: hidden;
+      top: 0;
+      right: 0;
+      background: linear-gradient(135deg, #1f5fbf, #0d2f6b);
+      border-radius: 0 0 0 28px;
+      z-index: 2;
+      transition: all .35s ease;
+    }
+    .go-arrow {
+      margin-top: -2px;
+      margin-right: -2px;
+      color: white;
+      font-size: 1rem;
+      font-weight: 700;
+      transition: transform .35s ease;
+    }
+    .course-card:hover .go-arrow,
+    .course-card.mobile-card-animate .go-arrow {
+      transform: translate(2px, -2px);
+    }
+    .course-card:hover .course-title,
+    .course-card.mobile-card-animate .course-title,
+    .course-card:hover .course-desc,
+    .course-card.mobile-card-animate .course-desc {
+      color: #ffffff;
+    }
+    .course-card:hover .course-mini-tags span,
+    .course-card.mobile-card-animate .course-mini-tags span {
+      background: rgba(255,255,255,.12);
+      border-color: rgba(255,255,255,.16);
+      color: #ffffff;
+    }
+    .course-card:hover .course-icon,
+    .course-card.mobile-card-animate .course-icon {
+      background: rgba(255,255,255,.14);
+      color: #ffffff;
+      border-color: rgba(255,255,255,.18);
+      transform: translateY(-6px) rotate(-6deg) scale(1.07);
+      box-shadow: 0 16px 28px rgba(0,0,0,.10), inset 0 0 0 1px rgba(255,255,255,.15);
+    }
+    .course-card:hover .go-corner,
+    .course-card.mobile-card-animate .go-corner {
+      background: linear-gradient(135deg, #ff9f1c, #ea7d00);
+    }
+
+    .about-card, .feature-card, .contact-card, .form-card, .detail-panel {
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(14,37,82,.08);
+      transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+      position: relative;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .about-card::before, .feature-card::before, .contact-card::before, .detail-panel::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      transform: scale(0);
+      transform-origin: center;
+      transition: transform .45s ease-out;
+      background: linear-gradient(135deg, #1f5fbf, #0d2f6b);
+      pointer-events: none;
+      border-radius: inherit;
+    }
+    .about-card:hover::before, .about-card.mobile-card-animate::before,
+    .feature-card:hover::before, .feature-card.mobile-card-animate::before,
+    .contact-card:hover::before, .contact-card.mobile-card-animate::before,
+    .detail-panel:hover::before { transform: scale(1); }
+    .about-card, .feature-card, .contact-card {
+      padding: 32px; height: 100%; transition: .45s ease;
+      border-radius: 30px;
+    }
+    .about-card:hover, .about-card.mobile-card-animate,
+    .feature-card:hover, .feature-card.mobile-card-animate,
+    .contact-card:hover, .contact-card.mobile-card-animate,
+    .detail-panel:hover {
+      transform: translateY(-10px) scale(1.01);
+      box-shadow: 0 26px 60px rgba(7,32,73,.16);
+      border-color: rgba(31,95,191,.14);
+    }
+    .about-card:hover h4,
+    .about-card.mobile-card-animate h4,
+    .about-card:hover p,
+    .about-card.mobile-card-animate p,
+    .about-card:hover li,
+    .about-card.mobile-card-animate li,
+    .feature-card:hover h4,
+    .feature-card.mobile-card-animate h4,
+    .feature-card:hover p,
+    .feature-card.mobile-card-animate p,
+    .contact-card:hover h5,
+    .contact-card.mobile-card-animate h5,
+    .contact-card:hover p,
+    .contact-card.mobile-card-animate p,
+    .detail-panel:hover h4,
+    .detail-panel:hover p,
+    .detail-panel:hover li { color: #fff; }
+    .about-card:hover .why-list i,
+    .about-card.mobile-card-animate .why-list i,
+    .feature-card:hover .feature-icon,
+    .feature-card.mobile-card-animate .feature-icon,
+    .contact-card:hover .contact-icon,
+    .contact-card.mobile-card-animate .contact-icon { color: var(--secondary) !important; }
+    .about-card:hover .feature-icon,
+    .about-card.mobile-card-animate .feature-icon,
+    .feature-card:hover .feature-icon,
+    .feature-card.mobile-card-animate .feature-icon,
+    .contact-card:hover .contact-icon,
+    .contact-card.mobile-card-animate .contact-icon {
+      transform: scale(1.08) rotate(-6deg);
+      background: rgba(255,255,255,.14);
+      box-shadow: 0 14px 28px rgba(31,95,191,.18);
+    }
+
+    .feature-icon, .contact-icon {
+      width: 64px; height: 64px; border-radius: 18px; display: inline-flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 18px; background: linear-gradient(135deg, rgba(31,95,191,.15), rgba(255,159,28,.18)); color: var(--primary-dark);
+      transition: .4s ease;
+    }
+    .contact-card .contact-icon {
+      color: var(--secondary-dark) !important;
+      background: linear-gradient(135deg, rgba(255,159,28,.16), rgba(255,187,85,.22));
+      box-shadow: 0 12px 24px rgba(255,159,28,.12);
+    }
+    .contact-card .contact-icon i {
+      color: var(--secondary-dark) !important;
+    }
+    .contact-card:hover .contact-icon,
+    .contact-card.mobile-card-animate .contact-icon {
+      background: rgba(255,255,255,.14);
+      box-shadow: 0 14px 28px rgba(31,95,191,.18);
+    }
+    .contact-card:hover .contact-icon i,
+    .contact-card.mobile-card-animate .contact-icon i {
+      color: var(--secondary) !important;
+    }
+    .feature-card p, .about-card p, .contact-card p, .detail-panel p { color: var(--muted); line-height: 1.8; margin-bottom: 18px; }
+    .why-list { list-style: none; padding-left: 0; margin: 0; }
+    .why-list li { display: flex; gap: 12px; margin-bottom: 14px; color: var(--muted); line-height: 1.7; }
+    .why-list i { color: var(--secondary-dark); font-size: 1.1rem; margin-top: 3px; }
+
+    .highlight-strip {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 40px;
+    }
+    .highlight-box {
+      padding: 24px;
+      border-radius: 24px;
+      background: linear-gradient(160deg, rgba(255,255,255,.94), rgba(244,248,255,.98));
+      border: 1px solid rgba(14,37,82,.08);
+      box-shadow: var(--shadow);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+      z-index: 0;
+    }
+    .highlight-box::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: -18px;
+      right: -18px;
+      width: 56px;
+      height: 56px;
+      border-radius: 999px;
+      transform: scale(1);
+      transform-origin: 50% 50%;
+      transition: transform .45s ease-out;
+      background: linear-gradient(135deg, #1f5fbf, #ff9f1c);
+    }
+    .highlight-box > * { position: relative; z-index: 1; transition: .35s ease; }
+    .highlight-box:hover,
+    .highlight-box.mobile-card-animate {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 26px 60px rgba(7,32,73,.16);
+      border-color: rgba(31,95,191,.14);
+    }
+    .highlight-box:hover::before,
+    .highlight-box.mobile-card-animate::before { transform: scale(22); }
+    .highlight-box h5 { font-weight: 800; margin: 12px 0 8px; }
+    .highlight-box p { color: var(--muted); margin: 0; line-height: 1.7; font-size: .95rem; }
+    .highlight-box i { font-size: 1.8rem; color: var(--secondary-dark); }
+    .highlight-box:hover h5,
+    .highlight-box.mobile-card-animate h5,
+    .highlight-box:hover p,
+    .highlight-box.mobile-card-animate p,
+    .highlight-box:hover i,
+    .highlight-box.mobile-card-animate i { color: #fff; }
+
+    .contact-banner {
+      background: linear-gradient(135deg, rgba(13,42,102,.98), rgba(31,95,191,.95)); color: white; border-radius: 32px;
+      padding: 40px; box-shadow: 0 30px 70px rgba(13,42,102,.24); position: relative; overflow: hidden;
+    }
+    .contact-banner::after {
+      content: ''; position: absolute; width: 260px; height: 260px; background: rgba(255,159,28,.15); border-radius: 50%; right: -80px; top: -80px;
+    }
+    .contact-banner .btn-theme {
+      background: linear-gradient(135deg, var(--secondary), #ffbb55); color: #18233f; box-shadow: 0 12px 30px rgba(255,159,28,.25);
+    }
+    .form-card { padding: 36px; }
+    .form-control, .form-select {
+      min-height: 54px; border-radius: 14px; border: 1px solid rgba(16,32,58,.1); padding: 14px 16px; font-size: .98rem; box-shadow: none!important;
+    }
+    textarea.form-control { min-height: 130px; resize: none; }
+    .form-control:focus, .form-select:focus { border-color: rgba(31,95,191,.4); }
+    .form-note { color: var(--muted); font-size: .94rem; font-weight: 500; margin-top: 14px; }
+
+    .detail-page { display: none; padding-top: 112px; min-height: 100vh; }
+    .detail-page.active { display: block; animation: fadeUp .6s ease; }
+    .detail-hero {
+      background: linear-gradient(135deg, #071737, #0d2f6b 60%, #1f5fbf);
+      color: #fff; padding: 60px; border-radius: 36px;
+      box-shadow: 0 30px 80px rgba(7,24,61,.35);
+      position: relative; overflow: hidden;
+    }
+    .detail-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, transparent 35%, rgba(255,159,28,.12));
+    }
+    .detail-hero::after {
+      content: ''; position: absolute; width: 240px; height: 240px; border-radius: 50%; background: rgba(255,159,28,.14); right: -60px; top: -60px;
+    }
+    .detail-hero p { color: rgba(255,255,255,.84); max-width: 760px; margin-bottom: 0; line-height: 1.9; position: relative; z-index: 1; }
+    .detail-hero h2 { font-size: clamp(2rem,4vw,3.2rem); font-weight: 800; margin-bottom: 14px; position: relative; z-index: 1; }
+    .detail-top-meta {
+      display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0 0; position: relative; z-index: 1;
+    }
+    .detail-top-meta span {
+      padding: 8px 12px; border-radius: 50px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.10);
+      font-weight: 700; font-size: .92rem;
+    }
+    .detail-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 22px; margin-top: 22px; }
+    .detail-panel {
+      padding: 30px; position: relative; overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(244,248,255,.98));
+    }
+    .detail-panel::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+    .detail-panel ul { margin: 0; padding-left: 1.1rem; }
+    .detail-panel li { color: var(--muted); margin-bottom: 10px; line-height: 1.75; }
+    .detail-badges { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
+    .detail-badges span {
+      background: linear-gradient(135deg, rgba(31,95,191,.08), rgba(255,159,28,.10)); color: var(--primary-dark); border: 1px solid rgba(14,37,82,.08);
+      padding: 10px 14px; border-radius: 50px; font-weight: 700; font-size: .92rem;
+    }
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .module-item {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid rgba(14,37,82,.08);
+      color: var(--text);
+      font-weight: 600;
+      line-height: 1.6;
+      box-shadow: 0 10px 24px rgba(7,32,73,.06);
+      transition: .35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .module-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(31,95,191,.10), rgba(255,159,28,.12));
+      opacity: 0;
+      transition: opacity .35s ease;
+    }
+    .module-item:hover {
+      transform: translateY(-6px) scale(1.02);
+      border-color: rgba(31,95,191,.14);
+      box-shadow: 0 16px 30px rgba(7,32,73,.10);
+    }
+    .module-item:hover::before { opacity: 1; }
+    .feature-stack {
+      display: grid; gap: 14px; margin-top: 18px;
+    }
+    .feature-pill-card {
+      padding: 16px 20px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #0d2f6b, #1f5fbf);
+      color: #fff;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 12px 30px rgba(31,95,191,.25);
+      transition: .35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-pill-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,.06), transparent 45%);
+      opacity: 0;
+      transition: opacity .35s ease;
+    }
+    .feature-pill-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 18px 34px rgba(31,95,191,.28);
+    }
+    .feature-pill-card:hover::before { opacity: 1; }
+    .feature-pill-card i { color: #ffbb55; font-size: 1.05rem; }
+    .back-btn { margin-bottom: 22px; }
+
+    .modal-content {
+      border: none; border-radius: 28px; overflow: hidden; background: linear-gradient(160deg, #081c46, #12397f 62%, #1f5fbf 100%); color: #fff;
+      box-shadow: 0 30px 80px rgba(7,32,73,.25);
+    }
+    #offerModal { z-index: 1060; }
+    .modal-backdrop { z-index: 1055; }
+    canvas.confetti-canvas {
+      pointer-events: none !important;
+      z-index: 2000 !important;
+    }
+
+    body.modal-open .navbar {
+      z-index: 1030 !important;
+    }
+    #offerModal {
+      z-index: 2000 !important;
+    }
+    #offerModal .modal-dialog {
+      position: relative;
+      z-index: 2001;
+      max-width: 560px;
+      margin: 1rem auto;
+    }
+    .modal-backdrop {
+      z-index: 1990 !important;
+    }
+    #offerModal .modal-content {
+      position: relative;
+      z-index: 2002;
+    }
+    #offerModal .btn-close {
+      z-index: 2005;
+      opacity: 1;
+      filter: none;
+    }
+
+    .detail-panel::before {
+      inset: 0 auto auto 0 !important;
+      width: 100%;
+      height: 5px !important;
+      transform: none !important;
+      opacity: 1;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+    .detail-panel:hover::before {
+      transform: none !important;
+    }
+    .detail-panel:hover {
+      transform: translateY(-6px);
+      background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(244,248,255,1));
+      box-shadow: 0 22px 48px rgba(7,32,73,.12);
+      border-color: rgba(31,95,191,.12);
+    }
+    .detail-panel:hover h4,
+    .detail-panel:hover h5,
+    .detail-panel:hover li,
+    .detail-panel:hover .module-item,
+    .detail-panel:hover .detail-badges span {
+      color: var(--primary-dark) !important;
+    }
+    .detail-panel:hover p {
+      color: var(--muted) !important;
+    }
+    .modal-body { padding: 22px; position: relative; }
+    .offer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ffd27a, #ff9f1c 72%);
+      color: #08224d;
+      font-weight: 900;
+      letter-spacing: .01em;
+      margin-bottom: 16px;
+      box-shadow: 0 12px 26px rgba(255,159,28,.28), inset 0 1px 0 rgba(255,255,255,.45);
+      position: relative;
+      overflow: hidden;
+    }
+    .offer-badge::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,.25) 45%, transparent 70%);
+      transform: translateX(-120%);
+      animation: offerShine 2.8s ease-in-out infinite;
+    }
+    .offer-badge i {
+      font-size: .95rem;
+      position: relative;
+      z-index: 1;
+    }
+    .offer-badge span {
+      position: relative;
+      z-index: 1;
+    }
+    .offer-urgency {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin: 12px 0 16px;
+    }
+    .offer-chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.14);
+      color: #fff;
+      font-weight: 800;
+      font-size: .9rem;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
+    }
+    .offer-chip strong { color: #ffd08a; }
+    .countdown-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 14px 32px rgba(6,23,61,.24);
+      font-weight: 700;
+      color: #fff;
+    }
+    .countdown-box > i {
+      font-size: 1rem;
+      color: #ffd27a;
+      opacity: .95;
+    }
+    .countdown-timer { display: inline-flex; gap: 10px; align-items: center; }
+    .countdown-unit {
+      min-width: 56px;
+      text-align: center;
+      padding: 8px 8px 9px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, #7082ad 0%, #6678a3 48%, #40527c 49%, #314468 100%);
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.14), 0 8px 18px rgba(4,17,45,.24);
+      position: relative;
+      overflow: hidden;
+    }
+    .countdown-unit::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 1px;
+      background: rgba(7,18,42,.42);
+      box-shadow: 0 1px 0 rgba(255,255,255,.10);
+      transform: translateY(-50%);
+    }
+    .countdown-unit span { display: block; line-height: 1.1; position: relative; z-index: 1; }
+    .countdown-unit .num {
+      font-size: 1.22rem;
+      font-weight: 900;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,.18);
+      transform-origin: center top;
+      backface-visibility: hidden;
+    }
+    .countdown-unit .num.flip {
+      animation: flipTick .42s ease;
+    }
+    .countdown-unit .lbl {
+      font-size: .64rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: rgba(255,255,255,.82);
+      margin-top: 6px;
+      font-weight: 800;
+    }
+    #offerModal h2 {
+      font-size: clamp(1.6rem, 3vw, 2.15rem);
+      line-height: 1.08;
+      margin-bottom: 0;
+      max-width: 420px;
+      text-wrap: balance;
+    }
+    #offerModal .offer-actions { margin-top: 16px; }
+    #offerModal .offer-actions .btn {
+      min-width: 122px;
+      font-weight: 800;
+      border-radius: 16px;
+      padding-top: .9rem !important;
+      padding-bottom: .9rem !important;
+    }
+    @keyframes offerShine {
+      0%, 15% { transform: translateX(-120%); }
+      40%, 100% { transform: translateX(120%); }
+    }
+    @keyframes flipTick {
+      0% { transform: rotateX(0deg); opacity: 1; }
+      45% { transform: rotateX(-90deg); opacity: .55; }
+      55% { transform: rotateX(90deg); opacity: .55; }
+      100% { transform: rotateX(0deg); opacity: 1; }
+    }
+
+    .pulse-cta { animation: pulseCta 1.6s infinite; }
+
+    
+    .whatsapp-support-btn {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 1080;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-width: 68px;
+      height: 68px;
+      padding: 0 22px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #25d366, #1ebe5b);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      box-shadow: 0 16px 34px rgba(37,211,102,.28);
+      transition: transform .25s ease, box-shadow .25s ease, width .25s ease;
+      animation: whatsappPulse 1.9s infinite;
+      overflow: visible;
+    }
+    .whatsapp-support-btn:hover {
+      color: #fff;
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 20px 38px rgba(37,211,102,.34);
+      animation-play-state: paused;
+    }
+    .whatsapp-support-btn span {
+      font-size: 1.08rem;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .whatsapp-support-btn i {
+      font-size: 1.9rem;
+      line-height: 1;
+    }
+    .whatsapp-support-btn::before {
+      content: "Chat with us";
+      position: absolute;
+      right: 0;
+      bottom: calc(100% + 12px);
+      background: #10203a;
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: .92rem;
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+      transition: opacity .25s ease, transform .25s ease;
+      box-shadow: 0 12px 28px rgba(16,32,58,.22);
+    }
+    .whatsapp-support-btn::after {
+      content: "";
+      position: absolute;
+      right: 24px;
+      bottom: calc(100% + 4px);
+      width: 12px;
+      height: 12px;
+      background: #10203a;
+      transform: rotate(45deg) translateY(0);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease, transform .25s ease;
+    }
+    .whatsapp-support-btn:hover::before,
+    .whatsapp-support-btn:hover::after,
+    .whatsapp-support-btn:focus-visible::before,
+    .whatsapp-support-btn:focus-visible::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .whatsapp-support-btn:focus-visible {
+      outline: 3px solid rgba(37,211,102,.28);
+      outline-offset: 3px;
+    }
+    @keyframes whatsappPulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37,211,102,.42), 0 16px 34px rgba(37,211,102,.28);
+      }
+      70% {
+        box-shadow: 0 0 0 18px rgba(37,211,102,0), 0 16px 34px rgba(37,211,102,.28);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37,211,102,0), 0 16px 34px rgba(37,211,102,.28);
+      }
+    }
+
+    @keyframes pulseCta {
+      0% { box-shadow: 0 0 0 0 rgba(255,255,255,.25); }
+      70% { box-shadow: 0 0 0 14px rgba(255,255,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+    }
+
+    footer { background: #081b43; color: rgba(255,255,255,.85); padding: 28px 0; }
+    .footer-brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-family: 'Outfit', sans-serif; }
+    .footer-brand img { width: 44px; height: 44px; border-radius: 12px; object-fit: cover; }
+    .footer-links a, .social-links a { color: rgba(255,255,255,.84); text-decoration: none; margin-left: 14px; transition: .3s ease; }
+    .social-links a { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,.08); margin-left: 10px; font-size: 1.05rem; }
+    .footer-links a:hover, .social-links a:hover { color: #ffbb55; }
+
+    .reveal { opacity: 0; transform: translateY(40px); transition: all .8s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    .floating-shape {
+      position: absolute; border-radius: 50%; opacity: .35; filter: blur(4px); animation: floatY 7s ease-in-out infinite; pointer-events: none;
+    }
+    .shape-1 { width: 18px; height: 18px; background: var(--secondary); top: 18%; left: 8%; }
+    .shape-2 { width: 24px; height: 24px; background: var(--primary); top: 56%; right: 10%; animation-delay: 1s; }
+    .shape-3 { width: 12px; height: 12px; background: var(--secondary-dark); bottom: 14%; left: 48%; animation-delay: 1.8s; }
+
+    @keyframes floatY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-18px); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+    .navbar-toggler {
+      border: 1px solid rgba(16,32,58,.16) !important;
+      padding: 8px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.98);
+      box-shadow: 0 8px 20px rgba(8,32,74,.08);
+      align-self: center;
+      margin-left: auto;
+      z-index: 1102;
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: 0 0 0 0.15rem rgba(31,95,191,.12) !important;
+    }
+
+    .navbar-toggler-icon {
+      background-image: none !important;
+      width: 1.55rem;
+      height: 1.1rem;
+      display: inline-block;
+      position: relative;
+      border-top: 2px solid #111111;
+      border-bottom: 2px solid #111111;
+    }
+
+    .navbar-toggler-icon::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 2px;
+      background: #111111;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 1199px) {
+      .course-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .navbar {
+        height: 84px;
+      }
+
+      .navbar .container {
+        height: 84px;
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        position: relative;
+      }
+
+      .navbar-brand {
+        width: 250px;
+        height: 84px;
+        max-width: calc(100% - 72px);
+      }
+
+      .nav-logo {
+        left: -25;
+        top: 50%;
+        transform: translateY(-44%);
+        height: 218px;
+        max-width: 349px;
+      }
+
+      .navbar-collapse {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 16px;
+        right: 16px;
+        background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+        padding: 18px 18px 14px;
+        border-radius: 20px;
+        box-shadow: 0 18px 40px rgba(8,32,74,.18);
+        z-index: 1100;
+      }
+
+      .navbar-nav {
+        align-items: flex-start !important;
+        gap: 0;
+      }
+
+      .navbar-nav .nav-link {
+        color: #ffffff !important;
+        margin: 0 0 12px 0;
+        padding: 10px 0 !important;
+        width: 100%;
+        font-size: 1.08rem;
+      }
+
+      .navbar-nav .nav-link::after {
+        bottom: 2px;
+        width: 72px;
+        transform-origin: left;
+      }
+
+      .btn-enquiry {
+        margin-top: 10px;
+        padding: 12px 18px;
+        width: 100%;
+        text-align: center;
+        background: linear-gradient(135deg, var(--secondary), #ffb347);
+      }
+
+      .btn-enquiry:hover {
+        background: linear-gradient(135deg, #ea7d00, var(--secondary));
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 136px;
+        padding-bottom: 48px;
+      }
+
+      .hero .container,
+      #courses .container,
+      #about .container,
+      #enquiry .container,
+      #callback .container,
+      #contact .container {
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .hero .row,
+      #about .row,
+      #enquiry .row,
+      #callback .row,
+      #contact .row {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .hero .row > *,
+      #about .row > *,
+      #enquiry .row > *,
+      #callback .row > *,
+      #contact .row > * {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .hero-card { margin-top: 28px; }
+      .contact-banner, .form-card, .detail-hero, .detail-panel { padding: 28px; }
+      .detail-grid { grid-template-columns: 1fr; }
+      .highlight-strip { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @keyframes mobileCourseReveal {
+      0% {
+        opacity: 0;
+        transform: translateY(28px) scale(.96);
+        box-shadow: 0 12px 28px rgba(8, 32, 74, 0.08);
+      }
+      60% {
+        opacity: 1;
+        transform: translateY(-6px) scale(1.01);
+        box-shadow: 0 22px 44px rgba(31,95,191,.16);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        box-shadow: 0 18px 40px rgba(8, 32, 74, 0.10);
+      }
+    }
+
+    @keyframes mobileCourseShine {
+      0% { filter: brightness(1); }
+      50% { filter: brightness(1.03); }
+      100% { filter: brightness(1); }
+    }
+
+    @media (max-width: 767px) {
+      section {
+
+      .whatsapp-support-btn {
+        min-width: 80px;
+        height: 80px;
+        padding: 0 18px;
+        right: 16px;
+        bottom: 96px;
+      }
+      .whatsapp-support-btn span {
+        display: none;
+      }
+      .whatsapp-support-btn i {
+        font-size: 2rem;
+      }
+      .whatsapp-support-btn::before {
+        right: 0;
+        font-size: .85rem;
+        padding: 9px 12px;
+      }
+ padding: 60px 0; }
+
+      .navbar {
+        height: 76px;
+      }
+
+      .navbar .container {
+        height: 76px;
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .navbar-brand {
+        width: 210px;
+        height: 76px;
+        max-width: calc(100% - 64px);
+      }
+
+      .nav-logo {
+        left: -35;
+        top: 63%;
+        transform: translateY(-50%);
+        height: 172px;
+        max-width: 261px;
+      }
+
+      .navbar-collapse {
+        left: 14px;
+        right: 14px;
+        top: calc(100% + 6px);
+        padding: 16px 16px 12px;
+      }
+
+      .hero {
+        padding-top: 104px;
+        padding-bottom: 42px;
+      }
+
+      .hero-badge {
+        width: 100%;
+        justify-content: flex-start;
+        font-size: .92rem;
+        line-height: 1.45;
+        padding: 12px 14px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.1rem, 8vw, 3rem);
+        line-height: 1.04;
+      }
+
+      .hero p {
+        font-size: 1rem;
+        line-height: 1.85;
+      }
+
+      .hero-points {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-points span {
+        width: 100%;
+      }
+
+      .stats-grid, .highlight-strip, .module-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .course-row {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+      }
+
+      .course-card {
+        min-height: auto;
+        border-radius: 24px;
+        padding: 22px 18px 20px;
+        transform: none !important;
+      }
+
+      .course-card::before {
+        top: auto;
+        bottom: -26px;
+        right: -22px;
+        width: 74px;
+        height: 74px;
+        transform: scale(1);
+      }
+
+      .course-card.mobile-card-animate {
+        animation: mobileCourseReveal .65s cubic-bezier(.22,1,.36,1), mobileCourseShine 1.1s ease-in-out .15s 1;
+        transform: none !important;
+        background: linear-gradient(135deg, #1f5fbf 0%, #0d2f6b 100%) !important;
+        border-color: rgba(13,47,107,.22) !important;
+        box-shadow: 0 22px 46px rgba(13,47,107,.22);
+      }
+
+      .course-card.mobile-card-animate::before {
+        top: -22px;
+        right: -22px;
+        bottom: auto;
+        width: 74px;
+        height: 74px;
+        background: linear-gradient(135deg, #0d2f6b, #1f5fbf);
+        transform: scale(24) !important;
+        opacity: 1;
+        animation: none;
+      }
+
+      .course-card.mobile-card-animate::after {
+        opacity: .16;
+        background: radial-gradient(circle at top right, rgba(255,255,255,.18), transparent 26%), radial-gradient(circle at bottom left, rgba(255,255,255,.10), transparent 20%);
+      }
+
+      .course-card.mobile-card-animate .course-title,
+      .course-card.mobile-card-animate .course-desc,
+      .course-card.mobile-card-animate .course-badge {
+        color: #ffffff !important;
+        transition: color .35s ease .22s;
+      }
+
+      .course-card.mobile-card-animate .course-mini-tags span {
+        background: rgba(255,255,255,.12) !important;
+        border-color: rgba(255,255,255,.16) !important;
+        color: #ffffff !important;
+        transition: all .35s ease .22s;
+      }
+
+      .course-card.mobile-card-animate .course-icon {
+        background: rgba(255,255,255,.14) !important;
+        color: #ffffff !important;
+        border-color: rgba(255,255,255,.18) !important;
+        transform: translateY(0) scale(1.04);
+        box-shadow: 0 12px 24px rgba(0,0,0,.12);
+        transition: all .35s ease .22s;
+      }
+
+      .course-card.mobile-card-animate .course-link {
+        background: linear-gradient(135deg, #ff9f1c, #ffb347) !important;
+        color: #ffffff !important;
+        box-shadow: 0 10px 24px rgba(255,159,28,.28);
+        transform: none;
+      }
+
+      .course-card.mobile-card-animate .go-corner {
+        background: linear-gradient(135deg, #ff9f1c, #ea7d00) !important;
+      }
+
+      .about-card, .feature-card, .contact-card, .highlight-box {
+        will-change: transform, box-shadow, border-color, opacity;
+      }
+
+      .about-card:active, .feature-card:active, .contact-card:active, .highlight-box:active {
+        transform: scale(.98);
+        transition: transform .15s ease;
+      }
+
+      .footer-links, .social-links { margin-top: 12px; }
+      .footer-links a, .social-links a { margin: 0 10px 0 0; }
+      .social-links a { width: 38px; height: 38px; }
+
+      #offerModal .modal-dialog {
+        max-width: 92vw;
+        margin: 1rem auto;
+      }
+
+      .modal-body {
+        padding: 22px;
+      }
+
+      .offer-urgency {
+        gap: 10px;
+        margin: 16px 0 16px;
+      }
+
+      .countdown-box {
+        padding: 10px 12px;
+      }
+
+      .whatsapp-support-btn {
+        right: 14px;
+        bottom: 14px;
+        padding: 12px 16px;
+      }
+      .whatsapp-support-btn span {
+        display: none;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="floating-shape shape-1"></div>
+  <div class="floating-shape shape-2"></div>
+  <div class="floating-shape shape-3"></div>
+
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container">
+  
+      <!-- LOGO -->
+      <a class="navbar-brand d-flex align-items-center" href="#home">
+        <img src="assets/logo.png" alt="Provenza Infotech" class="nav-logo">
+      </a>
+  
+      <!-- TOGGLER -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- MENU -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item">
+            <a class="btn btn-enquiry mt-2 mt-lg-0 ms-lg-3" href="#enquiry">Enquiry Now</a>
+          </li>
+        </ul>
+      </div>
+  
+    </div>
+  </nav>
+
+  <main id="mainWebsite">
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7 hero-content reveal">
+            <div class="hero-badge">
+              <i class="bi bi-stars"></i>
+              AI-Integrated Career Training for Job Seekers & Career Gap Students
+            </div>
+            <h1>Upskill today. <span>Get career-ready</span> for tomorrow.</h1>
+            <p>
+              Provenza Infotech delivers quality-focused, AI-driven career training for students, job seekers, and career-gap learners.
+              With industry experts, real-world projects, hands-on learning, one-to-one mentorship, prompt engineering practice,
+              interview preparation, and resume support, we help every learner become truly job ready.
+            </p>
+
+            <div class="hero-points">
+              <span><i class="bi bi-check-circle-fill text-warning"></i> Only 5 students per batch</span>
+              <span><i class="bi bi-check-circle-fill text-warning"></i> One-to-one mentorship</span>
+              <span><i class="bi bi-check-circle-fill text-warning"></i> Real-world projects</span>
+            </div>
+
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#courses" class="btn btn-theme">Explore Courses</a>
+              <a href="#callback" class="btn btn-outline-theme">Request a Call Back</a>
+            </div>
+          </div>
+
+          <div class="col-lg-5 hero-visual reveal">
+            <div class="hero-card">
+              <div class="brand-mini">
+                <img src="assets/log.png" alt="Provenza Infotech">
+                <div>
+                  <h5>Provenza Infotech</h5>
+                  <small>Quality training. Small batches. Career-focused learning.</small>
+                </div>
+              </div>
+
+              <div class="mb-2">
+                <span class="tech-pill"><i class="bi bi-cpu"></i> Gen AI Focus</span>
+                <span class="tech-pill"><i class="bi bi-person-workspace"></i> 1-to-1 Mentorship</span>
+                <span class="tech-pill"><i class="bi bi-file-earmark-person"></i> Resume Prep</span>
+                <span class="tech-pill"><i class="bi bi-mic"></i> Interview Training</span>
+              </div>
+
+              <div class="stats-grid">
+                <div class="stat-box">
+                  <h3>5</h3>
+                  <p>Students only in each batch for focused mentoring</p>
+                </div>
+                <div class="stat-box">
+                  <h3>Gen AI</h3>
+                  <p>Prompt engineering and AI-assisted workflows included</p>
+                </div>
+                <div class="stat-box">
+                  <h3>2 hrs</h3>
+                  <p>Daily sessions with practical implementation focus</p>
+                </div>
+                <div class="stat-box">
+                  <h3>Job Ready</h3>
+                  <p>Projects, interview prep, and professional guidance</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses">
+      <div class="container">
+        <div class="section-title text-center mx-auto reveal">
+          <span class="tag">Courses</span>
+          <h2>Specialized programs built for real career transformation</h2>
+          <p>
+            Every course combines core technical skills with Gen AI exposure, real-world projects, hands-on practice,
+            personalized mentorship, and job-readiness support.
+          </p>
+        </div>
+
+        <div class="course-row reveal">
+          <div class="course-item">
+            <div class="course-card" onclick="openCourse('python')">
+              <div class="go-corner"><div class="go-arrow">→</div></div>
+              <div class="course-badge">Limited Seats (5 Only)</div>
+              <div class="course-icon"><i class="bi bi-braces-asterisk"></i></div>
+              <span class="course-title">Python Full Stack Development</span>
+              <span class="course-desc">Python, APIs, frontend, backend, databases, Gen AI workflows, and career-ready project learning.</span>
+              <div class="course-mini-tags">
+                <span>Projects</span>
+                <span>AI</span>
+                <span>Mentorship</span>
+              </div>
+              <a href="javascript:void(0)" class="course-link">View Details <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="course-item">
+            <div class="course-card" onclick="openCourse('dotnet')">
+              <div class="go-corner"><div class="go-arrow">→</div></div>
+              <div class="course-badge">Limited Seats (5 Only)</div>
+              <div class="course-icon"><i class="bi bi-microsoft"></i></div>
+              <span class="course-title">.NET Core Full Stack Development</span>
+              <span class="course-desc">Enterprise-ready development with .NET Core, APIs, databases, AI tools, and guided implementation.</span>
+              <div class="course-mini-tags">
+                <span>Projects</span>
+                <span>Interview</span>
+                <span>Expert</span>
+              </div>
+              <a href="javascript:void(0)" class="course-link">View Details <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="course-item">
+            <div class="course-card" onclick="openCourse('java')">
+              <div class="go-corner"><div class="go-arrow">→</div></div>
+              <div class="course-badge">Limited Seats (5 Only)</div>
+              <div class="course-icon"><i class="bi bi-cup-hot"></i></div>
+              <span class="course-title">Java Full Stack Development</span>
+              <span class="course-desc">Java backend, frontend practice, REST APIs, SQL, Gen AI support, and interview-readiness training.</span>
+              <div class="course-mini-tags">
+                <span>Java</span>
+                <span>Practice</span>
+                <span>Resume</span>
+              </div>
+              <a href="javascript:void(0)" class="course-link">View Details <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="course-item">
+            <div class="course-card" onclick="openCourse('marketing')">
+              <div class="go-corner"><div class="go-arrow">→</div></div>
+              <div class="course-badge">Limited Seats (5 Only)</div>
+              <div class="course-icon"><i class="bi bi-megaphone"></i></div>
+              <span class="course-title">Digital Marketing</span>
+              <span class="course-desc">SEO, social media, paid ads, analytics, Gen AI content workflows, and job-focused campaign learning.</span>
+              <div class="course-mini-tags">
+                <span>SEO</span>
+                <span>Gen AI</span>
+                <span>Campaigns</span>
+              </div>
+              <a href="javascript:void(0)" class="course-link">View Details <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-title reveal">
+          <span class="tag">About</span>
+          <h2>Focused on quality training, deeper mentoring, and better career outcomes</h2>
+          <p>
+            We believe career training should be personal, practical, and result oriented. That is why our programs are designed
+            around small batch learning, strong trainer interaction, and complete job-readiness support.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-lg-6 reveal">
+            <div class="about-card h-100">
+              <div class="feature-icon"><i class="bi bi-buildings"></i></div>
+              <h4>Who We Are</h4>
+              <p>
+                Provenza Infotech is an AI-focused career training institute delivering high-quality learning experiences for students,
+                job seekers, and career-gap candidates. Our trainers and industry experts guide learners through practical modules,
+                real-world projects, and hands-on implementation to make them strong and confident in their chosen field.
+              </p>
+              <p class="mb-0">
+                We do not believe in crowded classrooms. We believe in focused training, personal attention, and helping each student become truly job ready.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6 reveal">
+            <div class="about-card h-100">
+              <div class="feature-icon"><i class="bi bi-gem"></i></div>
+              <h4>Why Provenza</h4>
+              <ul class="why-list">
+                <li><i class="bi bi-check-circle-fill"></i><span>Gen AI focused learning with prompt engineering as a practical skill.</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Only 5 students in a batch for better attention and stronger placement readiness.</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Trainers and industry experts with real implementation insights.</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Hands-on learning, real-world projects, and daily guided practice.</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>One-to-one mentorship, resume preparation, and interview preparation support.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-strip reveal">
+          <div class="highlight-box">
+            <i class="bi bi-people-fill"></i>
+            <h5>Small Batch Model</h5>
+            <p>Maximum 5 students per batch for focused learning and stronger outcomes.</p>
+          </div>
+          <div class="highlight-box">
+            <i class="bi bi-cpu-fill"></i>
+            <h5>Gen AI Skills</h5>
+            <p>Prompt engineering and AI productivity methods built into the learning journey.</p>
+          </div>
+          <div class="highlight-box">
+            <i class="bi bi-kanban-fill"></i>
+            <h5>Real Projects</h5>
+            <p>Build practical confidence through industry-style tasks and project work.</p>
+          </div>
+          <div class="highlight-box">
+            <i class="bi bi-briefcase-fill"></i>
+            <h5>Placement Readiness</h5>
+            <p>Resume preparation, interview training, and mentorship to become job ready.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row g-4">
+          <div class="col reveal">
+            <div class="feature-card text-center">
+              <div class="feature-icon mx-auto"><i class="bi bi-robot"></i></div>
+              <h4>Prompt Engineering</h4>
+              <p>Students learn to use Gen AI tools effectively for coding, content, productivity, and problem solving.</p>
+            </div>
+          </div>
+
+          <div class="col reveal">
+            <div class="feature-card text-center">
+              <div class="feature-icon mx-auto"><i class="bi bi-laptop"></i></div>
+              <h4>Hands-on Learning</h4>
+              <p>Practical sessions every day to turn concepts into working skills and implementation confidence.</p>
+            </div>
+          </div>
+
+          <div class="col reveal">
+            <div class="feature-card text-center">
+              <div class="feature-icon mx-auto"><i class="bi bi-person-video3"></i></div>
+              <h4>One-to-One Mentorship</h4>
+              <p>Closer trainer interaction helps every student progress with clarity, confidence, and accountability.</p>
+            </div>
+          </div>
+
+          <div class="col reveal">
+            <div class="feature-card text-center">
+              <div class="feature-icon mx-auto"><i class="bi bi-award"></i></div>
+              <h4>Interview & Resume Prep</h4>
+              <p>We prepare students with resume support, communication guidance, and interview-facing confidence.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="enquiry">
+      <div class="container">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-5 reveal">
+            <div class="contact-banner h-100 d-flex flex-column justify-content-center">
+              <span class="tag" style="background: rgba(255,255,255,0.12); color: #fff;">Enquiry Now</span>
+              <h2 class="mb-3" style="font-size: clamp(2rem,4vw,3rem); font-weight: 800; position: relative; z-index: 1;">Get personal guidance for the right course</h2>
+              <p style="color: rgba(255,255,255,0.82); line-height: 1.9; position: relative; z-index: 1;">
+                Share your details and our team will help you choose the right program based on your background,
+                goals, and career plan.
+              </p>
+              <div class="mt-3 d-flex flex-wrap gap-3 position-relative" style="z-index: 1;">
+                <a href="#callback" class="btn btn-theme">Request a Call Back</a>
+                <a href="#contact" class="btn btn-outline-light rounded-4 px-4 py-3 fw-bold">Contact Us</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7 reveal">
+            <div class="form-card h-100">
+              <div class="section-title mb-4">
+                <span class="tag">Student Enquiry Form</span>
+                <h2 class="mb-2" style="font-size: 2rem;">Let’s connect</h2>
+                <p class="mb-0">Fill the form and our team will contact you soon.</p>
+              </div>
+
+              <form id="enquiryForm" action="https://formspree.io/f/xkopwnwa" method="POST">
+                <div class="row g-3">
+              
+                  <div class="col-md-6">
+                    <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                  </div>
+              
+                  <div class="col-md-6">
+                    <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required>
+                  </div>
+              
+                  <div class="col-md-6">
+                    <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                  </div>
+              
+                  <div class="col-md-6">
+                    <select name="course" class="form-select" required>
+                      <option value="">Select Course</option>
+                      <option>Python Full Stack Development</option>
+                      <option>.NET Core Full Stack Development</option>
+                      <option>Java Full Stack Development</option>
+                      <option>Digital Marketing</option>
+                    </select>
+                  </div>
+              
+                  <div class="col-md-6">
+                    <select name="status" class="form-select">
+                      <option value="">Your Current Status</option>
+                      <option>Student</option>
+                      <option>Job Seeker</option>
+                      <option>Career Gap</option>
+                      <option>Working Professional</option>
+                    </select>
+                  </div>
+              
+                  <div class="col-md-6">
+                    <input type="text" name="preferred_time" class="form-control" placeholder="Preferred Call Time">
+                  </div>
+              
+                  <div class="col-12">
+                    <textarea name="message" class="form-control" placeholder="Tell us about your goal or what course you are interested in"></textarea>
+                  </div>
+              
+                  <input type="hidden" name="_subject" value="New Enquiry - Provenza Infotech">
+              
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-theme w-100" id="enquirySubmitBtn">
+                      Submit Enquiry
+                    </button>
+                    <div id="enquiryStatus" class="form-note mt-3"></div>
+                  </div>
+              
+                </div>
+              </form>            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="callback">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6 reveal">
+            <div class="section-title mb-0">
+              <span class="tag">Request a Call Back</span>
+              <h2>Need help choosing the best course?</h2>
+              <p>
+                Our team can guide you based on your background, current skill level, and career target.
+                We focus on helping each learner choose the right path and become industry ready.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6 reveal">
+            <div class="form-card">
+                <form id="callbackForm" action="https://formspree.io/f/xkopwnwa" method="POST">
+                    <div class="row g-3">
+                  
+                      <div class="col-md-6">
+                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                      </div>
+                  
+                      <div class="col-md-6">
+                        <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required>
+                      </div>
+                  
+                      <div class="col-12">
+                        <input type="text" name="best_time_to_call" class="form-control" placeholder="Best Time to Call">
+                      </div>
+                  
+                      <div class="col-12">
+                        <textarea name="message" class="form-control" placeholder="What would you like to know?"></textarea>
+                      </div>
+                  
+                      <input type="hidden" name="_subject" value="Call Back Request - Provenza Infotech">
+                  
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-theme w-100" id="callbackSubmitBtn">
+                          Request Call Back
+                        </button>
+                        <div id="callbackStatus" class="form-note mt-3"></div>
+                      </div>
+                  
+                    </div>
+                  </form>            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-title text-center mx-auto reveal">
+          <span class="tag">Contact</span>
+          <h2>Let’s build your future together</h2>
+          <p>Reach out to us for course guidance, admission support, and student assistance.</p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-md-4 reveal">
+            <div class="contact-card text-center">
+              <div class="contact-icon mx-auto"><i class="bi bi-geo-alt"></i></div>
+              <h5>Location</h5>
+              <p>Kerala, India</p>
+            </div>
+          </div>
+          <div class="col-md-4 reveal">
+            <div class="contact-card text-center">
+              <div class="contact-icon mx-auto"><i class="bi bi-telephone"></i></div>
+              <h5>Phone</h5>
+              <p>+91 +91 8111839992</p>
+            </div>
+          </div>
+          <div class="col-md-4 reveal">
+            <div class="contact-card text-center">
+              <div class="contact-icon mx-auto"><i class="bi bi-envelope"></i></div>
+              <h5>Email</h5>
+              <p>info@provenzainfotech.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="detail-page" id="python-page">
+    <div class="container">
+      <button class="btn btn-outline-theme back-btn" onclick="goHome()"><i class="bi bi-arrow-left"></i> Back to Website</button>
+      <div class="detail-hero">
+        <span class="tag" style="background: rgba(255,255,255,.1); color: #fff;">Course Details</span>
+        <h2>Python Full Stack Development</h2>
+        <p>Become job ready in full stack web development with Python, frontend frameworks, backend architecture, APIs, databases, deployment basics, Gen AI tools, and prompt engineering practice.</p>
+        <div class="detail-top-meta">
+          <span>5-6 Months</span>
+          <span>2 Hours Daily</span>
+          <span>Monday - Friday</span>
+          <span>Online</span>
+        </div>
+      </div>
+      <div class="detail-grid">
+        <div class="detail-panel">
+          <h4>Course Overview</h4>
+          <p>This program is designed for learners who want practical full stack skills with strong implementation ability. The course combines coding fundamentals, project development, AI-assisted productivity, and job-readiness guidance.</p>
+          <h4>Modules</h4>
+          <div class="module-grid">
+            <div class="module-item">Programming Fundamentals with Python</div>
+            <div class="module-item">HTML, CSS, JavaScript and Responsive UI</div>
+            <div class="module-item">Frontend Framework Basics</div>
+            <div class="module-item">Python Backend Framework and REST APIs</div>
+            <div class="module-item">Database Design and SQL</div>
+            <div class="module-item">Authentication, Deployment and Git</div>
+            <div class="module-item">Gen AI Tools and Prompt Engineering</div>
+            <div class="module-item">Mini Projects, Major Project, Resume and Interview Prep</div>
+          </div>
+        </div>
+        <div class="detail-panel">
+          <h4>Features</h4>
+          <div class="feature-stack">
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Real-world projects</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Hands-on learning</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>One-to-one mentorship</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Prompt engineering practice</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Resume and interview preparation</span></div>
+          </div>
+          <div class="detail-badges">
+            <span>Duration: 5-6 Months</span>
+            <span>Session: 2 Hours Daily</span>
+            <span>Schedule: Monday - Friday</span>
+            <span>Mode: Online</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail-page" id="dotnet-page">
+    <div class="container">
+      <button class="btn btn-outline-theme back-btn" onclick="goHome()"><i class="bi bi-arrow-left"></i> Back to Website</button>
+      <div class="detail-hero">
+        <span class="tag" style="background: rgba(255,255,255,.1); color: #fff;">Course Details</span>
+        <h2>.NET Core Full Stack Development</h2>
+        <p>Gain the skills to build modern, scalable web applications using .NET Core, frontend technologies, databases, APIs, and AI-enhanced development workflows.</p>
+        <div class="detail-top-meta">
+          <span>5-6 Months</span>
+          <span>2 Hours Daily</span>
+          <span>Monday - Friday</span>
+          <span>Online</span>
+        </div>
+      </div>
+      <div class="detail-grid">
+        <div class="detail-panel">
+          <h4>Course Overview</h4>
+          <p>This course is designed for learners who want strong full stack development skills with enterprise-level concepts, practical coding, project experience, and complete career preparation.</p>
+          <h4>Modules</h4>
+          <div class="module-grid">
+            <div class="module-item">C# Programming Fundamentals</div>
+            <div class="module-item">HTML, CSS, JavaScript and UI Basics</div>
+            <div class="module-item">Frontend Framework Concepts</div>
+            <div class="module-item">.NET Core Backend Development</div>
+            <div class="module-item">REST APIs and Authentication</div>
+            <div class="module-item">SQL, Entity Framework and Data Management</div>
+            <div class="module-item">Gen AI Tools and Prompt Engineering</div>
+            <div class="module-item">Real Project, Resume Building and Interview Preparation</div>
+          </div>
+        </div>
+        <div class="detail-panel">
+          <h4>Features</h4>
+          <div class="feature-stack">
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Project-based learning</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Expert trainer guidance</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>One-to-one mentorship</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Interview and resume support</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>AI-focused productivity training</span></div>
+          </div>
+          <div class="detail-badges">
+            <span>Duration: 5-6 Months</span>
+            <span>Session: 2 Hours Daily</span>
+            <span>Schedule: Monday - Friday</span>
+            <span>Mode: Online</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail-page" id="java-page">
+    <div class="container">
+      <button class="btn btn-outline-theme back-btn" onclick="goHome()"><i class="bi bi-arrow-left"></i> Back to Website</button>
+      <div class="detail-hero">
+        <span class="tag" style="background: rgba(255,255,255,.1); color: #fff;">Course Details</span>
+        <h2>Java Full Stack Development</h2>
+        <p>Build full stack development expertise with Java, frontend tools, backend systems, database integration, API development, Gen AI tools, and job-readiness mentoring.</p>
+        <div class="detail-top-meta">
+          <span>5-6 Months</span>
+          <span>2 Hours Daily</span>
+          <span>Monday - Friday</span>
+          <span>Online</span>
+        </div>
+      </div>
+      <div class="detail-grid">
+        <div class="detail-panel">
+          <h4>Course Overview</h4>
+          <p>This course helps learners build strong Java full stack skills through practical classes, guided implementation, real projects, and complete support to become interview ready and placement focused.</p>
+          <h4>Modules</h4>
+          <div class="module-grid">
+            <div class="module-item">Core Java Programming</div>
+            <div class="module-item">HTML, CSS, JavaScript and Responsive Design</div>
+            <div class="module-item">Frontend Development Concepts</div>
+            <div class="module-item">Java Backend Framework Concepts</div>
+            <div class="module-item">REST APIs and Application Architecture</div>
+            <div class="module-item">Database Management and SQL</div>
+            <div class="module-item">Gen AI Tools and Prompt Engineering</div>
+            <div class="module-item">Project Development, Resume Support and Interview Preparation</div>
+          </div>
+        </div>
+        <div class="detail-panel">
+          <h4>Features</h4>
+          <div class="feature-stack">
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Real-world projects</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Hands-on coding practice</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Prompt engineering exposure</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>One-to-one mentoring</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Job-readiness support</span></div>
+          </div>
+          <div class="detail-badges">
+            <span>Duration: 5-6 Months</span>
+            <span>Session: 2 Hours Daily</span>
+            <span>Schedule: Monday - Friday</span>
+            <span>Mode: Online</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail-page" id="marketing-page">
+    <div class="container">
+      <button class="btn btn-outline-theme back-btn" onclick="goHome()"><i class="bi bi-arrow-left"></i> Back to Website</button>
+      <div class="detail-hero">
+        <span class="tag" style="background: rgba(255,255,255,.1); color: #fff;">Course Details</span>
+        <h2>Digital Marketing</h2>
+        <p>Master modern digital marketing with SEO, social media, paid campaigns, analytics, content planning, automation, and Gen AI tools for smart marketing execution.</p>
+        <div class="detail-top-meta">
+          <span>5-6 Months</span>
+          <span>2 Hours Daily</span>
+          <span>Monday - Friday</span>
+          <span>Online</span>
+        </div>
+      </div>
+      <div class="detail-grid">
+        <div class="detail-panel">
+          <h4>Course Overview</h4>
+          <p>This course is ideal for learners who want career-oriented digital marketing skills with practical campaign understanding, real-world execution methods, and AI-powered content and strategy workflows.</p>
+          <h4>Modules</h4>
+          <div class="module-grid">
+            <div class="module-item">Digital Marketing Fundamentals</div>
+            <div class="module-item">SEO and Search Visibility</div>
+            <div class="module-item">Social Media Strategy and Campaign Planning</div>
+            <div class="module-item">Paid Advertising Basics</div>
+            <div class="module-item">Content Marketing and Analytics</div>
+            <div class="module-item">Branding, Funnels and Lead Generation</div>
+            <div class="module-item">Gen AI for Content, Ideas and Productivity</div>
+            <div class="module-item">Campaign Projects, Resume and Interview Preparation</div>
+          </div>
+        </div>
+        <div class="detail-panel">
+          <h4>Features</h4>
+          <div class="feature-stack">
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Practical assignments</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Real campaign understanding</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Mentorship and career guidance</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Prompt engineering use cases</span></div>
+            <div class="feature-pill-card"><i class="bi bi-check-circle-fill"></i><span>Resume and interview support</span></div>
+          </div>
+          <div class="detail-badges">
+            <span>Duration: 5-6 Months</span>
+            <span>Session: 2 Hours Daily</span>
+            <span>Schedule: Monday - Friday</span>
+            <span>Mode: Online</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <div class="modal fade" id="offerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="btn-close btn-close-white position-absolute end-0 top-0 m-3 offer-close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
+          <span class="offer-badge"><i class="bi bi-stars"></i><span>Foundation Batch Offer</span></span>
+          <h2 class="fw-bold mb-2">Limited seats available. Offer ending soon.</h2>
+          <div class="offer-urgency">
+            <div class="offer-chip">Only <strong>5 seats</strong> in each batch</div>
+            <div class="offer-chip">Next batch filling fast</div>
+          </div>
+          <div class="countdown-box">
+            <i class="bi bi-clock-history"></i>
+            <div class="countdown-timer" id="offerCountdown">
+              <div class="countdown-unit"><span class="num" id="cdDays">03</span><span class="lbl">Days</span></div>
+              <div class="countdown-unit"><span class="num" id="cdHours">00</span><span class="lbl">Hours</span></div>
+              <div class="countdown-unit"><span class="num" id="cdMinutes">00</span><span class="lbl">Mins</span></div>
+              <div class="countdown-unit"><span class="num" id="cdSeconds">00</span><span class="lbl">Secs</span></div>
+            </div>
+          </div>
+          <div class="offer-actions d-flex flex-wrap gap-2 justify-content-start">
+            <a href="#enquiry" class="btn btn-light fw-bold px-4 py-3 rounded-4 pulse-cta" data-bs-dismiss="modal" onclick="closeOfferAndGo('enquiry'); return false;">Enquiry</a>
+            <a href="#callback" class="btn btn-outline-light fw-bold px-4 py-3 rounded-4" data-bs-dismiss="modal" onclick="closeOfferAndGo('callback'); return false;">Callback</a>
+            <a href="https://wa.me/918111839992?text=Hi%20Provenza%20Infotech,%20I%20am%20interested%20in%20your%20courses.%20Please%20share%20the%20details." target="_blank" rel="noopener" class="btn btn-warning fw-bold px-4 py-3 rounded-4" data-bs-dismiss="modal">
+              <i class="bi bi-whatsapp me-2"></i>WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row align-items-center g-3">
+        <div class="col-lg-4">
+          <!-- <div class="footer-brand">
+            <img src="assets/Provenza.png" alt="Provenza Infotech">
+             <span>PROVENZA INFOTECH</span> 
+          </div> -->
+        </div>
+        <div class="col-lg-4 text-lg-center footer-links">
+          <a href="#home">Home</a>
+          <a href="#courses">Courses</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="col-lg-4 text-lg-end social-links">
+          <a href="mailto:info@provenzainfotech.com" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="text-center mt-3" style="color: rgba(255,255,255,.78); font-size: .95rem;">
+        &copy; 2026 Powered by Provenza Infotech
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/918111839992?text=Hi%20Provenza%20Infotech,%20I%20am%20interested%20in%20your%20courses.%20Please%20share%20the%20details." target="_blank" rel="noopener" class="whatsapp-support-btn" aria-label="Chat on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+    <span>WhatsApp Support</span>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('main section[id]');
+    const revealItems = document.querySelectorAll('.reveal');
+    const mainWebsite = document.getElementById('mainWebsite');
+    const detailPages = document.querySelectorAll('.detail-page');
+
+
+    const navbarCollapseEl = document.getElementById('navbarNav');
+    const navCollapse = navbarCollapseEl ? new bootstrap.Collapse(navbarCollapseEl, { toggle: false }) : null;
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 992 && navbarCollapseEl && navbarCollapseEl.classList.contains('show')) {
+          navCollapse.hide();
+        }
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 160;
+        if (window.scrollY >= sectionTop) current = section.getAttribute('id');
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.12 });
+    revealItems.forEach(item => observer.observe(item));
+
+    function openCourse(course) {
+      mainWebsite.style.display = 'none';
+      detailPages.forEach(page => page.classList.remove('active'));
+      document.getElementById(`${course}-page`).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      navLinks.forEach(link => link.classList.remove('active'));
+    }
+
+    function goHome() {
+      detailPages.forEach(page => page.classList.remove('active'));
+      mainWebsite.style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    async function handleFormSubmit(formId, statusId, buttonId, successMessage) {
+  const form = document.getElementById(formId);
+  const statusBox = document.getElementById(statusId);
+  const submitBtn = document.getElementById(buttonId);
+
+  if (!form) return;
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    statusBox.textContent = "";
+    statusBox.style.color = "#66748d";
+
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Submitting...";
+
+    try {
+      const formData = new FormData(form);
+
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (response.ok) {
+        form.reset();
+        statusBox.textContent = successMessage;
+        statusBox.style.color = "#198754";
+      } else {
+        const data = await response.json();
+        if (data.errors) {
+          statusBox.textContent = data.errors.map(error => error.message).join(", ");
+        } else {
+          statusBox.textContent = "Something went wrong. Please try again.";
+        }
+        statusBox.style.color = "#dc3545";
+      }
+    } catch (error) {
+      statusBox.textContent = "Network error. Please check your connection and try again.";
+      statusBox.style.color = "#dc3545";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalBtnText;
+    }
+  });
+}
+
+handleFormSubmit(
+  "enquiryForm",
+  "enquiryStatus",
+  "enquirySubmitBtn",
+  "Thank you. Your enquiry has been submitted successfully. Our team will contact you soon."
+);
+
+handleFormSubmit(
+  "callbackForm",
+  "callbackStatus",
+  "callbackSubmitBtn",
+  "Thank you. Your call back request has been submitted successfully."
+);
+    // document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+    //   e.preventDefault();
+    //   alert('Thank you! Your enquiry has been received. We will contact you soon.');
+    //   this.reset();
+    // });
+
+    // document.getElementById('callbackForm').addEventListener('submit', function(e) {
+    //   e.preventDefault();
+    //   alert('Thank you! Your call back request has been submitted.');
+    //   this.reset();
+    // });
+
+    function launchConfetti() {
+      const duration = 1000;
+      const end = Date.now() + duration;
+      const defaults = { zIndex: 9999 };
+
+      confetti(Object.assign({}, defaults, {
+        particleCount: 90,
+        spread: 85,
+        origin: { y: 0.45 },
+        colors: ['#1f5fbf', '#0d2f6b', '#ff9f1c', '#ffb347']
+      }));
+
+      (function frame() {
+        confetti(Object.assign({}, defaults, {
+          particleCount: 4,
+          angle: 60,
+          spread: 70,
+          origin: { x: 0, y: 0.6 },
+          colors: ['#1f5fbf', '#ff9f1c']
+        }));
+
+        confetti(Object.assign({}, defaults, {
+          particleCount: 4,
+          angle: 120,
+          spread: 70,
+          origin: { x: 1, y: 0.6 },
+          colors: ['#0d2f6b', '#ffb347']
+        }));
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      })();
+    }
+
+    let offerCountdownInterval;
+    let mobileCardObserver;
+
+    function startOfferCountdown() {
+      const daysEl = document.getElementById('cdDays');
+      const hoursEl = document.getElementById('cdHours');
+      const minsEl = document.getElementById('cdMinutes');
+      const secsEl = document.getElementById('cdSeconds');
+      if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+
+      let fakeSecondsLeft = (2 * 24 * 60 * 60) + (11 * 60 * 60) + (37 * 60) + 42;
+
+      function updateFlipValue(el, value) {
+        const next = String(value).padStart(2, '0');
+        if (el.textContent !== next) {
+          el.classList.remove('flip');
+          void el.offsetWidth;
+          el.textContent = next;
+          el.classList.add('flip');
+        }
+      }
+
+      function renderFakeCountdown() {
+        const days = Math.floor(fakeSecondsLeft / 86400);
+        const hours = Math.floor((fakeSecondsLeft % 86400) / 3600);
+        const mins = Math.floor((fakeSecondsLeft % 3600) / 60);
+        const secs = fakeSecondsLeft % 60;
+
+        updateFlipValue(daysEl, days);
+        updateFlipValue(hoursEl, hours);
+        updateFlipValue(minsEl, mins);
+        updateFlipValue(secsEl, secs);
+
+        fakeSecondsLeft -= 1;
+
+        if (fakeSecondsLeft < 0) {
+          fakeSecondsLeft = (1 * 24 * 60 * 60) + (23 * 60 * 60) + (59 * 60) + 59;
+        }
+      }
+
+      clearInterval(offerCountdownInterval);
+      renderFakeCountdown();
+      offerCountdownInterval = setInterval(renderFakeCountdown, 1000);
+    }
+
+    function enableMobileCardAnimations() {
+      const mobileCards = document.querySelectorAll('.course-card, .about-card, .feature-card, .contact-card, .highlight-box');
+
+      if (mobileCardObserver) {
+        mobileCardObserver.disconnect();
+      }
+
+      mobileCards.forEach((card) => card.classList.remove('mobile-card-animate'));
+
+      if (window.innerWidth > 767) return;
+
+      mobileCardObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('mobile-card-animate');
+            void entry.target.offsetWidth;
+            entry.target.classList.add('mobile-card-animate');
+          } else {
+            entry.target.classList.remove('mobile-card-animate');
+          }
+        });
+      }, { threshold: 0.35 });
+
+      mobileCards.forEach((card) => mobileCardObserver.observe(card));
+    }
+
+
+    function closeOfferAndGo(targetId) {
+      const modalEl = document.getElementById('offerModal');
+      const offerModal = modalEl ? bootstrap.Modal.getOrCreateInstance(modalEl) : null;
+      if (offerModal) {
+        offerModal.hide();
+      }
+
+      const goToTarget = () => {
+        document.body.classList.remove('modal-open');
+        document.body.style.removeProperty('padding-right');
+        const target = document.getElementById(targetId);
+        if (target) {
+          const nav = document.querySelector('.navbar');
+          const navHeight = nav ? nav.offsetHeight : 88;
+          const y = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+          window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+        }
+      };
+
+      if (modalEl) {
+        modalEl.addEventListener('hidden.bs.modal', goToTarget, { once: true });
+        setTimeout(goToTarget, 350);
+      } else {
+        goToTarget();
+      }
+    }
+
+    window.addEventListener('load', () => {
+      enableMobileCardAnimations();
+
+      setTimeout(() => {
+        const modalEl = document.getElementById('offerModal');
+        if (!modalEl) return;
+
+        const offerModal = bootstrap.Modal.getOrCreateInstance(modalEl, { backdrop: true, keyboard: true });
+        const closeBtn = modalEl.querySelector('.offer-close-btn');
+
+        if (closeBtn) {
+          closeBtn.addEventListener('click', () => {
+            offerModal.hide();
+          });
+        }
+
+        modalEl.addEventListener('shown.bs.modal', () => {
+          launchConfetti();
+          startOfferCountdown();
+        }, { once: true });
+
+        modalEl.addEventListener('hidden.bs.modal', () => {
+          document.body.classList.remove('modal-open');
+          document.body.style.removeProperty('padding-right');
+        });
+
+        offerModal.show();
+      }, 1200);
+    });
+
+    window.addEventListener('resize', enableMobileCardAnimations);
+  </script>
+</body>
+</html>
